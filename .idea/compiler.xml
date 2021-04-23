@@ -9,5 +9,13 @@
         <module name="BlogTravel" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="BlogTravel" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BlogTravel" options="-parameters" />
+    </option>
   </component>
 </project>
