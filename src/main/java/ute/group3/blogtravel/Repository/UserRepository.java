@@ -6,8 +6,6 @@ import ute.group3.blogtravel.model.User;
 
 import java.util.List;
 
-public interface UserRepository extends MongoRepository<User, Long> {
-    List<User> findByFullName(String fullName);
-    @Query("{fullName:'?0'}")
-    List<User>findCustomByFullName(String fullName);
+public interface UserRepository extends MongoRepository<User, String> {
+
 }
