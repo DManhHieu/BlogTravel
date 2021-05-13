@@ -2,11 +2,12 @@ package ute.group3.blogtravel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import ute.group3.blogtravel.Repository.UserRepository;
+import org.springframework.scheduling.annotation.EnableAsync;
+
 
 
 @SpringBootApplication
+@EnableAsync
 public class BlogTravelApplication {
 
     public static void main(String[] args) {
