@@ -11,4 +11,8 @@ public class RegisterRequest {
     private String email;
     private String username;
     private String password;
+    private String emailError;
+    private String userError;
+    private String passwordError;
+    private boolean success;
 }

@@ -15,4 +15,5 @@ import java.time.Instant;
 public class AuthenticationResponse {
     private String authenticationToken;
     private String username;
+
 }

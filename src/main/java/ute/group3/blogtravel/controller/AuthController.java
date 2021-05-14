@@ -16,21 +16,27 @@ import javax.servlet.http.HttpSession;
 public class AuthController {
     private final AuthService authService;
     @PostMapping("/signup")
-    public String signup(@ModelAttribute(value = "registerRequest") RegisterRequest registerRequest){
-        authService.signup(registerRequest);
-        return "pages/home";
+    public String signup(@ModelAttribute(value = "registerRequest") RegisterRequest registerRequest, Model model){
+
+        registerRequest = authService.signup(registerRequest);
+        if(!registerRequest.isSuccess()){
+            model.addAttribute("registerRequest",registerRequest);
+            return "pages/register";
+        }
+        return "pages/registerSuccess";
     }
 
     @GetMapping("/signup")
     public String signup(Model model){
         RegisterRequest registerRequest=new RegisterRequest();
+        registerRequest.setSuccess(false);
         model.addAttribute("registerRequest",registerRequest);
         return "pages/register";
     }
     @GetMapping("accountVerification/{token}")
     public String verifyAccount(@PathVariable String token){
         authService.verifyAccount(token);
-        return "Account activated successfully";
+        return "pages/ActiveAccount";
     }
 
     @GetMapping("/login")
@@ -40,9 +46,10 @@ public class AuthController {
         return "pages/login";
     }
     @PostMapping("/login")
-    public String login(@ModelAttribute(value = "loginRequest") LoginRequest loginRequest, HttpSession session){
+    public String login(@ModelAttribute(value = "loginRequest") LoginRequest loginRequest, Model model, HttpSession session){
         AuthenticationResponse authenticationResponse = authService.login(loginRequest);
         if(authenticationResponse==null){
+
             return "pages/login";
         }
         session.setAttribute("authentication", authenticationResponse);

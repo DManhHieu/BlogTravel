@@ -31,7 +31,15 @@ public class AuthService {
     private final JwtProvider jwtProvider;
     private final VerificationTokenRepository verificationTokenRepository;
 
-    public void signup(RegisterRequest registerRequest) {
+    public RegisterRequest signup(RegisterRequest registerRequest) {
+        registerRequest.setEmailError("");
+        registerRequest.setPasswordError("");
+        registerRequest.setUserError("");
+        if(userRepository.findByUsername(registerRequest.getUsername())!=null){
+            System.out.println("Tên tài khoản đã tồn tại");
+            registerRequest.setUserError("Tên tài khoản đã tồn tại");
+            return registerRequest;
+        }
         User user=new User();
         user.setEmail(registerRequest.getEmail());
         user.setUsername(registerRequest.getUsername());
@@ -48,6 +56,8 @@ public class AuthService {
         mailService.sendMail(new NotificationEmail("Hãy kích hoạt tài khoản", user.getEmail(), "Cảm ưn bạn đã đăng kí Blog Travel " +
                 "hãy click vào url dưới đây để kích hoạt tài khoản: " +
                 "http://localhost:8080/accountVerification/" + token ));
+        registerRequest.setSuccess(true);
+        return registerRequest;
     }
 
     private String generateVerificationToken(User user) { // hàm tạo và lưu token cho user
