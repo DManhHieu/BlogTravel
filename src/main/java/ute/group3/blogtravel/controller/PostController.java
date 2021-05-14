@@ -6,15 +6,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import ute.group3.blogtravel.dto.LoginRequest;
+
+import ute.group3.blogtravel.model.ItemPost;
+import ute.group3.blogtravel.model.ItemType;
 import ute.group3.blogtravel.model.Post;
 
 import ute.group3.blogtravel.service.PostService;
 import ute.group3.blogtravel.service.authenticationService;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Controller
 @AllArgsConstructor
+
 public class PostController {
     private final PostService postService;
     private final authenticationService authentication;
@@ -26,6 +33,11 @@ public class PostController {
             return "pages/Auth/login";
         }
         Post post=new Post();
+        List<ItemPost> items=new ArrayList<ItemPost>();
+        items.add(new ItemPost("1", ItemType.TEXT, 1));
+        items.add(new ItemPost("2", ItemType.TEXT, 2));
+        items.add(new ItemPost("3", ItemType.TEXT, 3));
+        post.setItemPostList(items);
         model.addAttribute("post", post);
         return "pages/post/newpost";
     }
