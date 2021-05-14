@@ -92,19 +92,20 @@ public class AuthService {
     public AuthenticationResponse login(LoginRequest loginRequest) {
         User user= userRepository.findByUsername(loginRequest.getUsername());
         if(user==null) {
-            System.out.println("Không tìm thấy tài khoản: "+ loginRequest.getUsername());
-            return null;
+
+            loginRequest.setUsernameError("Không tìm thấy tài khoản");
+            return new AuthenticationResponse("", "",loginRequest);
         }
         if(user.getEnabled()==false){
-            System.out.println("Tài khoản: "+ loginRequest.getUsername() + " chưa kích hoạt");
-            return null;
+            loginRequest.setUsernameError("Tài khoản chưa kích hoạt");
+            return new AuthenticationResponse("", "",loginRequest);
         }
         if(user.getPassword().equals( passwordEncoder.encode(loginRequest.getPassword()))){
-            System.out.println("Tài khoản: "+ loginRequest.getUsername() + " sai mật khẩu");
-            return null;
+            loginRequest.setPasswordError("Sai mật khẩu");
+            return new AuthenticationResponse("", "",loginRequest);
         }
         System.out.println("Tài khoản: "+loginRequest.getUsername()+" đăng nhập thành công");
         String token = jwtProvider.generateTokenWithUserName(loginRequest.getUsername());
-        return new AuthenticationResponse(token, loginRequest.getUsername());
+        return new AuthenticationResponse(token, loginRequest.getUsername(),null);
     }
 }

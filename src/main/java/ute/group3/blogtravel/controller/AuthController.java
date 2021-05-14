@@ -21,9 +21,9 @@ public class AuthController {
         registerRequest = authService.signup(registerRequest);
         if(!registerRequest.isSuccess()){
             model.addAttribute("registerRequest",registerRequest);
-            return "pages/register";
+            return "pages/Auth/register";
         }
-        return "pages/registerSuccess";
+        return "pages/Auth/registerSuccess";
     }
 
     @GetMapping("/signup")
@@ -31,26 +31,26 @@ public class AuthController {
         RegisterRequest registerRequest=new RegisterRequest();
         registerRequest.setSuccess(false);
         model.addAttribute("registerRequest",registerRequest);
-        return "pages/register";
+        return "pages/Auth/register";
     }
     @GetMapping("accountVerification/{token}")
     public String verifyAccount(@PathVariable String token){
         authService.verifyAccount(token);
-        return "pages/ActiveAccount";
+        return "pages/Auth/ActiveAccount";
     }
 
     @GetMapping("/login")
     public String login(Model model){
         LoginRequest loginRequest=new LoginRequest();
         model.addAttribute("loginRequest", loginRequest);
-        return "pages/login";
+        return "pages/Auth/login";
     }
     @PostMapping("/login")
     public String login(@ModelAttribute(value = "loginRequest") LoginRequest loginRequest, Model model, HttpSession session){
         AuthenticationResponse authenticationResponse = authService.login(loginRequest);
-        if(authenticationResponse==null){
-
-            return "pages/login";
+        if(authenticationResponse.getAuthenticationToken().isEmpty()){
+            model.addAttribute("loginRequest", authenticationResponse.getLoginRequest());
+            return "pages/Auth/login";
         }
         session.setAttribute("authentication", authenticationResponse);
         return "pages/home";
