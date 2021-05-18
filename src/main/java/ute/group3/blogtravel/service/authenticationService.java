@@ -20,4 +20,9 @@ public class authenticationService {
         }
         return true;
     }
+
+    public String getUserByCokie(HttpSession session) {
+        AuthenticationResponse authentication=(AuthenticationResponse) session.getAttribute("authentication");
+       return jwtProvider.getUsernameFromJwt(authentication.getAuthenticationToken());
+    }
 }

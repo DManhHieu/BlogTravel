@@ -6,19 +6,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import ute.group3.blogtravel.dto.LoginRequest;
+import ute.group3.blogtravel.dto.AuthenticationResponse;
+
 
 import ute.group3.blogtravel.dto.PostRequest;
-import ute.group3.blogtravel.model.ItemPost;
-import ute.group3.blogtravel.model.ItemType;
-import ute.group3.blogtravel.model.Post;
+
 
 import ute.group3.blogtravel.service.PostService;
 import ute.group3.blogtravel.service.authenticationService;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
 
 
 @Controller
@@ -30,17 +28,19 @@ public class PostController {
     @GetMapping("/newpost")
     public String createPost(Model model, HttpSession session){
         if(!authentication.requestValid(session)){
-            LoginRequest loginRequest=new LoginRequest();
-            model.addAttribute("loginRequest", loginRequest);
-            return "pages/Auth/login";
+            return "redirect:/login";
         }
         PostRequest post=new PostRequest();
         model.addAttribute("post", post);
         return "pages/post/newpost";
     }
     @PostMapping("/newpost")
-    public String savePost(@ModelAttribute(value ="post") PostRequest postRequest){
-
+    public String savePost(@ModelAttribute(value ="post") PostRequest postRequest, HttpSession session, Model model ) throws IOException {
+        if(!authentication.requestValid(session)){
+            return "redirect:/login";
+        }
+        AuthenticationResponse authentication=(AuthenticationResponse) session.getAttribute("authentication");
+        postService.save(postRequest,authentication.getUsername());
         return "pages/home";
     }
 }

@@ -14,5 +14,5 @@ import java.util.List;
 public class PostRequest {
     private String Title;
     private String description;
-    private List<ItemPost> itemPost;
+    private List<ItemPostRequest> itemPost;
 }
