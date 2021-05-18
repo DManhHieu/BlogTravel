@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.index.Indexed;
 
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -17,5 +19,6 @@ public class Post {
     private String username;
     private String Title;
     private String description;
+    private Instant Created;
     private List<ItemPost> itemPostList;
 }

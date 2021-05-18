@@ -5,7 +5,7 @@
     <title>Bài viết mới</title>
 </head>
 <body>
-    <form action="/newpost" method="post" th:object="${post}"  enctype="multipart/form-data">
+    <form action="/post/new" method="post" th:object="${post}"  enctype="multipart/form-data">
         <div>
             <input type="text" th:field="*{title}" placeholder="Tiêu đề">
         </div>
