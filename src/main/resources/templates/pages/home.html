@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Xin chào</title>
+</head>
+<body>
+    <div th:object="${session.authentication}">
+        <p>User: <span th:text="*{username}"></span> </p>
+        <p>Token: <span th:text="*{authenticationToken}"></span> </p>
+    </div>
+</body>
+</html>
