@@ -21,7 +21,7 @@
     </div>
     <div>
         <p th:utext="${postResponse.authorName}"></p>
-        <p th:utext="${postResponse.created}"></p>
+        <p th:utext="${#temporals.format(postResponse.created, 'dd/MM/yyyy HH:mm')}"></p>
     </div>
 </body>
 </html>
