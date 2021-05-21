@@ -14,6 +14,7 @@ import ute.group3.blogtravel.dto.PostRequest;
 
 
 import ute.group3.blogtravel.dto.PostResponse;
+import ute.group3.blogtravel.dto.listPostResponse;
 import ute.group3.blogtravel.model.ItemType;
 import ute.group3.blogtravel.service.PostService;
 import ute.group3.blogtravel.service.authenticationService;
@@ -53,5 +54,11 @@ public class PostController {
         model.addAttribute("itemimg", ItemType.IMG);
         model.addAttribute("postResponse", postResponse);
         return "pages/post/viewpost";
+    }
+    @GetMapping({"/post/all","/post"})
+    public String ListPosts(Model model){
+        listPostResponse listPostResponse= postService.getAllPost();
+        model.addAttribute("listPostResponse",listPostResponse);
+        return "pages/post/listpost";
     }
 }

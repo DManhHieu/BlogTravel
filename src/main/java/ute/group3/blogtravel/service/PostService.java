@@ -8,6 +8,7 @@ import ute.group3.blogtravel.Repository.UserRepository;
 import ute.group3.blogtravel.dto.ItemPostRequest;
 import ute.group3.blogtravel.dto.PostRequest;
 import ute.group3.blogtravel.dto.PostResponse;
+import ute.group3.blogtravel.dto.listPostResponse;
 import ute.group3.blogtravel.model.ItemPost;
 import ute.group3.blogtravel.model.ItemType;
 import ute.group3.blogtravel.model.Post;
@@ -74,5 +75,34 @@ public class PostService {
         postResponse.setDescription(post.getDescription());
         postResponse.setAuthorName(userRepository.findByUsername(post.getUsername()).getFullName());
         return  postResponse;
+    }
+    private PostResponse MapPostToPostResponse(Post post){
+        PostResponse postResponse=new PostResponse();
+        postResponse.setItemPosts(post.getItemPostList());
+        postResponse.setCreated(post.getCreated());
+        postResponse.setTitle(post.getTitle());
+        postResponse.setDescription(post.getDescription());
+        postResponse.setAuthorName(userRepository.findByUsername(post.getUsername()).getFullName());
+        return postResponse;
+    }
+    public listPostResponse getAllPost() {
+        List<PostResponse> postResponses=new ArrayList<>();
+        List<Post> listPost= postRepository.findAll();
+        for (Post post: listPost
+             ) {
+            postResponses.add(MapPostToPostResponse(post));
+
+        }
+        return new listPostResponse(postResponses);
+    }
+    public listPostResponse getPostByUser(String username){
+        List<PostResponse> postResponses=new ArrayList<>();
+        List<Post> listPost= postRepository.findByUsername(username);
+        for (Post post: listPost
+        ) {
+            postResponses.add(MapPostToPostResponse(post));
+
+        }
+        return new listPostResponse(postResponses);
     }
 }
