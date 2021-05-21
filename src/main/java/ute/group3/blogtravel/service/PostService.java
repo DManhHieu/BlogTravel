@@ -37,6 +37,13 @@ public class PostService {
         else {
             post.setNumber(postRepository.findTopByOrderByNumberDesc().getNumber() + 1);
         }
+
+        String fileimgheader=StringUtils.cleanPath(postRequest.getImgHeader().getOriginalFilename());
+        if(!fileimgheader.equals("")) {
+            post.setHeaderImg("img/postPhoto/"+post.getNumber() + "/" + fileimgheader);
+            fileUpLoadService.saveFile("img/postPhoto/" + post.getNumber(), fileimgheader, postRequest.getImgHeader());
+        }
+
         if(postRequest.getItemPost()!=null)
         {
             List<ItemPost> items=new ArrayList<ItemPost>();
@@ -50,7 +57,7 @@ public class PostService {
                 if(item.getType()== ItemType.IMG){
                     String filename=StringUtils.cleanPath(item.getImg().getOriginalFilename());
                     if(!filename.equals("")) {
-                        itemPost.setText("img/postPhoto/"+post.getNumber() + "/" + StringUtils.cleanPath(item.getImg().getOriginalFilename()));
+                        itemPost.setText("img/postPhoto/"+post.getNumber() + "/" + filename);
                         fileUpLoadService.saveFile("img/postPhoto/" + post.getNumber(), filename, item.getImg());
                         items.add(itemPost);
                         index++;
@@ -73,6 +80,7 @@ public class PostService {
         postResponse.setItemPosts(post.getItemPostList());
         postResponse.setCreated(post.getCreated());
         postResponse.setTitle(post.getTitle());
+        postResponse.setImgHeader(post.getHeaderImg());
         postResponse.setDescription(post.getDescription());
         postResponse.setAuthorName(userRepository.findByUsername(post.getUsername()).getFullName());
         return  postResponse;
@@ -83,6 +91,7 @@ public class PostService {
         postResponse.setCreated(post.getCreated());
         postResponse.setNumber(post.getNumber());
         postResponse.setTitle(post.getTitle());
+        postResponse.setImgHeader(post.getHeaderImg());
         postResponse.setDescription(post.getDescription());
         postResponse.setAuthorName(userRepository.findByUsername(post.getUsername()).getFullName());
         return postResponse;

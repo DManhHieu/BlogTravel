@@ -17,6 +17,7 @@ public class Post {
     @Indexed(unique = true)
     private long number;
     private String username;
+    private String headerImg;
     private String Title;
     private String description;
     private Instant Created;
