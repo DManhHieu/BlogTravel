@@ -15,6 +15,8 @@ import javax.servlet.http.HttpSession;
 @AllArgsConstructor
 public class AuthController {
     private final AuthService authService;
+
+
     @PostMapping("/signup")
     public String signup(@ModelAttribute(value = "registerRequest") RegisterRequest registerRequest, Model model){
 

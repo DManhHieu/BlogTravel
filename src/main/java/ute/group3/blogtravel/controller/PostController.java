@@ -29,6 +29,8 @@ import java.io.IOException;
 public class PostController {
     private final PostService postService;
     private final authenticationService authentication;
+
+
     @GetMapping("/post/new")
     public String createPost(Model model, HttpSession session){
         if(!authentication.requestValid(session)){
