@@ -31,13 +31,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="baiviet.html">Bài viết</a>
+                            <a class="nav-link" href="/post">Bài viết</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="chitietbaiviet.html">Chi tiết bài viết</a>
+                            <a class="nav-link" href="#">Chi tiết bài viết</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="vietbai.html">Viết bài</a>
+                            <a class="nav-link" href="/post/new">Viết bài</a>
                         </li>
                         <li class="nav-item">
                             <div class="dropdown">
@@ -45,7 +45,7 @@
                                     Tài khoản<i class="fa fa-caret-down" style="display:inline"></i>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f7f7f7">
-                                    <a class="dropdown-item" href="login.html">Đăng nhập</a>
+                                    <a class="dropdown-item" href="/login">Đăng nhập</a>
                                     <a class="dropdown-item" href="#">Another action</a>
                                     <a class="dropdown-item" href="#">Something else here</a>
                                 </div>
@@ -71,7 +71,6 @@
                                         <img th:src="@{/assets/images/blog-post-02.jpg}" alt="">
                                     </div>
                                     <div class="down-content">
-                                        <span>Lifestyle</span>
                                         <a href="chitietbaiviet.html"><h4 th:utext="${postResponse.title}" >Aenean pulvinar gravida sem nec</h4></a>
                                         <ul class="post-info">
                                             <li><a href="#" th:utext="${postResponse.authorName}">Admin</a></li>
@@ -86,10 +85,10 @@
                                                 <p th:utext="${item.text}"></p>
                                             </div>
                                             <div th:if="${item.type== itemimg}">
-                                                <img th:src="@{'/'+${item.text}}">
+                                                <img th:src="@{'/'+${item.text}}" width="100%">
                                             </div>
                                         </div>
-                                        <div class="post-options">
+                                       <!-- <div class="post-options">
                                             <div class="row">
                                                 <div class="col-6">
                                                     <ul class="post-tags">
@@ -106,11 +105,11 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
+                          <!--  <div class="col-lg-12">
                                 <div class="sidebar-item comments">
                                     <div class="sidebar-heading">
                                         <h2>4 comments</h2>
@@ -156,8 +155,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-12">
+                            </div>-->
+                         <!--   <div class="col-lg-12">
                                 <div class="sidebar-item submit-comment">
                                     <div class="sidebar-heading">
                                         <h2>Your comment</h2>
@@ -194,11 +193,11 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+          <!--      <div class="col-lg-4">
                     <div class="sidebar">
                         <div class="row">
                             <div class="col-lg-12">
@@ -268,13 +267,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </section>
 
 
-    <footer>
+  <!--  <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -297,7 +296,7 @@
         </div>
     </footer>
 
-
+-->
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
