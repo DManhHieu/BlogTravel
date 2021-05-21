@@ -14,7 +14,8 @@ public class homeController {
     @GetMapping("/")
     public String home(Model model){
         listPostResponse listPostResponse= postService.getAllPost();
-        listPostResponse.setListPost(listPostResponse.getListPost().subList(0,3));
+        if(listPostResponse.getListPost()!=null)
+            listPostResponse.setListPost(listPostResponse.getListPost().subList(0,3));
         model.addAttribute("listPostResponse",listPostResponse);
         return "pages/index";
     }
