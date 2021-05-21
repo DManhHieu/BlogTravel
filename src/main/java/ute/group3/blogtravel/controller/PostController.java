@@ -44,8 +44,8 @@ public class PostController {
             return "redirect:/login";
         }
         AuthenticationResponse authentication=(AuthenticationResponse) session.getAttribute("authentication");
-        postService.save(postRequest,authentication.getUsername());
-        return "pages/home";
+        Long number = postService.save(postRequest,authentication.getUsername());
+        return "redirect:/post/"+number.toString();
     }
     @GetMapping("/post/{number}")
     public String ViewPost(@PathVariable int number, Model model){

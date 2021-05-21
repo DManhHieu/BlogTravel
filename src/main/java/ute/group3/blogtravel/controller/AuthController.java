@@ -53,6 +53,6 @@ public class AuthController {
             return "pages/Auth/login";
         }
         session.setAttribute("authentication", authenticationResponse);
-        return "pages/home";
+        return "redirect:/post";
     }
 }
