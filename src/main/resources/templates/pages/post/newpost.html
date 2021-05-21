@@ -102,7 +102,7 @@
                                         <form action="/post/new" method="post" th:object="${post}"  enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-md-12 col-sm-12">
-                                                    <input type="file" id="Headerimg" th:field="*{imgHeader}"  accept="image/*" onchange="displayImg(event)">
+                                                    <input type="file" id="Headerimg" th:field="*{imgHeader}"  accept="image/*" onchange="displayImg(event)" placeholder="Thêm ảnh nổi bật" >
                                                     <img id="HeaderimgDisplay" />
                                                 </div>
                                                 <div class="col-md-12 col-sm-12">
@@ -161,13 +161,6 @@
                         <li><a href="#">Dribbble</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-12">
-                    <div class="copyright-text">
-                        <p>Copyright 2020 Stand Blog Co.
-
-                            | Design: <a rel="nofollow" href="https://templatemo.com" target="_parent">TemplateMo</a></p>
-                    </div>
-                </div>
             </div>
         </div>
     </footer>
@@ -176,15 +169,17 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script th:href="@{/vendor/jquery/jquery.min.js}"></script>
-    <script th:href="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+    <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
 
     <!-- Additional Scripts -->
-    <script th:href="@{/assets/js/custom.js}"></script>
-    <script th:href="@{/assets/js/owl.js}"></script>
-    <script th:href="@{/assets/js/slick.js}"></script>
-    <script th:href="@{/assets/js/isotope.js}"></script>
-    <script th:href="@{/assets/js/accordions.js}"></script>
+    <script th:src="@{/assets/js/custom.js}"></script>
+    <script th:src="@{/assets/js/owl.js}"></script>
+    <script th:src="@{/assets/js/slick.js}"></script>
+    <script th:src="@{/assets/js/isotope.js}"></script>
+    <script th:src="@{/assets/js/accordions.js}"></script>
+
 
     <script language = "text/Javascript">
         cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
@@ -202,7 +197,7 @@
     function addText() {
         var node=document.createElement("div");
         node.innerHTML=`<div id="itemPost[`+index+`]" >
-                            <textarea name="itemPost[`+index+`].text"> </textarea>
+                            <textarea name="itemPost[`+index+`].text" placeholder="Thêm nội dung" > </textarea>
                             <input name="itemPost[`+index+`].type" type=hidden value="TEXT">
                             <input name="itemPost[`+index+`].number" type=hidden value=`+index+`>
                             <button type="button" value="itemPost[`+index+`]" onclick="deleteItem(event)">X</button>
@@ -214,7 +209,7 @@
         var node=document.createElement("div");
         node.innerHTML=`<div id="itemPost[`+index+`]" >
                             <img id="itemPost[`+index+`].imgDisplay" />
-                            <input type="file" id="itemPost[`+index+`].img" name="itemPost[`+index+`].img"  accept="image/*" onchange="displayImg(event)">
+                            <input type="file" id="itemPost[`+index+`].img" name="itemPost[`+index+`].img"  accept="image/*" onchange="displayImg(event)" placeholder="Thêm hình ảnh" >
                             <input name="itemPost[`+index+`].type" type=hidden value="IMG">
                             <input name="itemPost[`+index+`].number" type=hidden value=`+index+`>
                             <button type="button" value="itemPost[`+index+`]" onclick="deleteItem(event)">X</button>

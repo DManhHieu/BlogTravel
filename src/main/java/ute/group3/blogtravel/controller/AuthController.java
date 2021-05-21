@@ -42,7 +42,10 @@ public class AuthController {
     }
 
     @GetMapping("/login")
-    public String login(Model model){
+    public String login(Model model, HttpSession session ){
+        if(session.getAttribute("authentication")!=null){
+            return "redirect:/";
+        }
         LoginRequest loginRequest=new LoginRequest();
         model.addAttribute("loginRequest", loginRequest);
         return "pages/Auth/login";
@@ -55,6 +58,6 @@ public class AuthController {
             return "pages/Auth/login";
         }
         session.setAttribute("authentication", authenticationResponse);
-        return "redirect:/post";
+        return "redirect:/";
     }
 }
