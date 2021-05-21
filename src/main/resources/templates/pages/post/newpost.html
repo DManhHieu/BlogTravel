@@ -103,7 +103,7 @@
                                             <div class="row">
                                                 <div class="col-md-12 col-sm-12">
                                                     <input type="file" id="Headerimg" th:field="*{imgHeader}"  accept="image/*" onchange="displayImg(event)" placeholder="Thêm ảnh nổi bật" >
-                                                    <img id="HeaderimgDisplay" />
+                                                    <img id="HeaderimgDisplay"  width="100%"/>
                                                 </div>
                                                 <div class="col-md-12 col-sm-12">
                                                     <fieldset>
@@ -208,7 +208,7 @@
     function addImage() {
         var node=document.createElement("div");
         node.innerHTML=`<div id="itemPost[`+index+`]" >
-                            <img id="itemPost[`+index+`].imgDisplay" />
+                            <img id="itemPost[`+index+`].imgDisplay"  width="100%"/>
                             <input type="file" id="itemPost[`+index+`].img" name="itemPost[`+index+`].img"  accept="image/*" onchange="displayImg(event)" placeholder="Thêm hình ảnh" >
                             <input name="itemPost[`+index+`].type" type=hidden value="IMG">
                             <input name="itemPost[`+index+`].number" type=hidden value=`+index+`>
