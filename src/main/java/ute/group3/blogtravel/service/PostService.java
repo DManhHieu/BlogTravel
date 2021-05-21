@@ -25,7 +25,7 @@ public class PostService {
     private final PostRepository postRepository;
     private final FileUpLoadService fileUpLoadService;
     private final UserRepository userRepository;
-    public void save(PostRequest postRequest, String user) throws IOException {
+    public Long save(PostRequest postRequest, String user) throws IOException {
         Post post=new Post();
         post.setUsername(user);
         post.setTitle(postRequest.getTitle());
@@ -64,6 +64,7 @@ public class PostService {
             post.setItemPostList(items);
         }
         postRepository.save(post);
+        return post.getNumber();
     }
 
     public PostResponse getPost(int number) {
@@ -80,6 +81,7 @@ public class PostService {
         PostResponse postResponse=new PostResponse();
         postResponse.setItemPosts(post.getItemPostList());
         postResponse.setCreated(post.getCreated());
+        postResponse.setNumber(post.getNumber());
         postResponse.setTitle(post.getTitle());
         postResponse.setDescription(post.getDescription());
         postResponse.setAuthorName(userRepository.findByUsername(post.getUsername()).getFullName());
