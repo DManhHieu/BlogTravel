@@ -7,8 +7,10 @@
 <body>
 <div th:each="item : ${listPostResponse.listPost}">
     <div>
-        <h2 th:utext="${item.title}"></h2>
-        <p th:utext="${item.description}"></p>
+        <a th:href="@{'/post/'+${item.number}}">
+            <h2 th:utext="${item.title}"></h2>
+            <p th:utext="${item.description}"></p>
+        </a>
     </div>
     <div>
         <p th:utext="${item.authorName}"></p>
