@@ -1,4 +1,4 @@
-package ute.group3.blogtravel.model;
+package ute.group3.blogtravel.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,10 +9,9 @@ import java.time.Instant;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class comment {
-    private String id;
-    private Long PostId;
-    private String username;
+public class CommentDto {
+    private Long postId;
+    private Instant createdDate;
     private String text;
-    private Instant Created;
+    private String userName;
 }
