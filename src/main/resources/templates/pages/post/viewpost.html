@@ -33,11 +33,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/post">Bài viết</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Chi tiết bài viết</a>
-                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/post/new">Viết bài</a>
+                            <a th:if="${session.isLogin}" class="nav-link" href="/post/new">Viết bài</a>
                         </li>
                         <li class="nav-item">
                             <div class="dropdown">
@@ -45,9 +42,9 @@
                                     Tài khoản<i class="fa fa-caret-down" style="display:inline"></i>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f7f7f7">
-                                    <a class="dropdown-item" href="/login">Đăng nhập</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a th:if="${!session.isLogin}" class="dropdown-item" href="/login">Đăng nhập</a>
+                                    <a th:if="${!session.isLogin}" class="dropdown-item" href="/signup">Đăng ký</a>
+                                    <a th:if="${session.isLogin}" class="dropdown-item" href="/logout">Đăng xuất</a>
                                 </div>
                             </div>
                         </li>

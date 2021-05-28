@@ -54,7 +54,7 @@
                         <a class="nav-link" href="/post">Bài viết</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/post/new">Viết bài</a>
+                        <a th:if="${session.isLogin}" class="nav-link" href="/post/new">Viết bài</a>
                     </li>
                     <li class="nav-item">
                         <div class="dropdown">
@@ -62,9 +62,9 @@
                                 Tài khoản<i class="fa fa-caret-down" style="display:inline"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f7f7f7">
-                                <a class="dropdown-item" href="/login">Đăng nhập</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a th:if="${!session.isLogin}" class="dropdown-item" href="/login">Đăng nhập</a>
+                                <a th:if="${!session.isLogin}" class="dropdown-item" href="/signup">Đăng ký</a>
+                                <a th:if="${session.isLogin}" class="dropdown-item" href="/logout">Đăng xuất</a>
                             </div>
                         </div>
                     </li>
@@ -81,7 +81,7 @@
             <div class="col-lg-8">
                 <div class="all-blog-posts">
                     <div class="row">
-                        <div class="col-lg-12" th:each="item : ${listPostResponse.listPost}">
+                        <div class="col-lg-12" th:each="item : ${indexResponse.listPost}">
                             <div class="blog-post">
                                 <div class="blog-thumb">
                                     <img th:src="@{'/'+${item.imgHeader}}" width="100%">
@@ -141,6 +141,13 @@
                                     <h2>Bài viết nổi bật</h2>
                                 </div>
                                 <div class="content">
+                                    <a th:href="@{'/post/'+${indexResponse.postTrending.number}}"><h4 th:utext="${indexResponse.postTrending.title}">(Tựa đề)</h4></a>
+                                    <p th:utext="${indexResponse.postTrending.description}"> (Tóm tắt mô tả)</p>
+                                    <ul class="post-info">
+                                        <li><a href="#" th:utext="${indexResponse.postTrending.authorName}">(Người đăng?)</a></li>
+                                    </ul>
+                                    <!--                      <p>Stand  is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">Contact TemplateMo</a> for more info. Thank you.</p>-->
+
                                     <!--                      <ul>-->
                                     <!--                        <li><a href="chitietbaiviet.html">-->
                                     <!--                          <h5>Vestibulum id turpis porttitor sapien facilisis scelerisque</h5>-->
@@ -164,6 +171,11 @@
                                     <h2>Chủ đề</h2>
                                 </div>
                                 <div class="content">
+                                    <ul>
+                                        <div th:each="item: ${indexResponse.listTopic}">
+                                            <li><a href="#" th:utext="${item.name}"> </a> </li>
+                                        </div>
+                                    </ul>
                                     <!--                      <ul>-->
                                     <!--                        <li><a href="#">- Nature Lifestyle</a></li>-->
                                     <!--                        <li><a href="#">- Awesome Layouts</a></li>-->

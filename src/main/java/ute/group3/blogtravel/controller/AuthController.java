@@ -58,6 +58,13 @@ public class AuthController {
             return "pages/Auth/login";
         }
         session.setAttribute("authentication", authenticationResponse);
+        session.setAttribute("isLogin",true);
         return "redirect:/";
+    }
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.removeAttribute("authentication");
+        session.removeAttribute("isLogin");
+        return "redirect:/login";
     }
 }

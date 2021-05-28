@@ -77,13 +77,7 @@ public class PostService {
     public PostResponse getPost(int number) {
         PostResponse postResponse=new PostResponse();
         Post post=postRepository.findByNumber(number);
-        postResponse.setItemPosts(post.getItemPostList());
-        postResponse.setCreated(post.getCreated());
-        postResponse.setTitle(post.getTitle());
-        postResponse.setImgHeader(post.getHeaderImg());
-        postResponse.setDescription(post.getDescription());
-        postResponse.setAuthorName(userRepository.findByUsername(post.getUsername()).getFullName());
-        return  postResponse;
+        return  MapPostToPostResponse(post);
     }
     private PostResponse MapPostToPostResponse(Post post){
         PostResponse postResponse=new PostResponse();
@@ -115,5 +109,21 @@ public class PostService {
 
         }
         return new listPostResponse(postResponses);
+    }
+
+    public List<PostResponse> getTopThree() {
+        List<PostResponse> postResponses=new ArrayList<>();
+        List<Post> listPost= postRepository.findAll();
+        for (Post post: listPost
+        ) {
+            postResponses.add(MapPostToPostResponse(post));
+        }
+        if(postResponses.size()<3)
+            return postResponses;
+        return postResponses.subList(0,3);
+    }
+
+    public PostResponse getTrending() {
+        return getPost(0);
     }
 }
