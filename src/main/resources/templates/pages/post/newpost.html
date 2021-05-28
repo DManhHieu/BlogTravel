@@ -78,7 +78,7 @@
                     <div class="col-lg-12">
                         <div class="text-content">
                             <h4>Thêm bài</h4>
-                            <h2>let’s enjoy!</h2>
+                            <h2>Let's be creative!</h2>
                         </div>
                     </div>
                 </div>
@@ -105,6 +105,7 @@
                                         <form action="/post/new" method="post" th:object="${post}"  enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-md-12 col-sm-12">
+                                                    <label for="title">Chọn ảnh nổi bật:</label>
                                                     <input type="file" id="Headerimg" th:field="*{imgHeader}"  accept="image/*" onchange="displayImg(event)" placeholder="Thêm ảnh nổi bật" >
                                                     <img id="HeaderimgDisplay"  width="100%"/>
                                                 </div>
@@ -152,21 +153,17 @@
         </div>
     </section>
 
-  <!--  <footer>
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="social-icons">
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Behance</a></li>
-                        <li><a href="#">Linkedin</a></li>
-                        <li><a href="#">Dribbble</a></li>
+                        <li><a href="#">TRAVEL BLOG</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-    </footer>-->
+    </footer>
 
 
 
@@ -199,23 +196,37 @@
     var index=0;
     function addText() {
         var node=document.createElement("div");
-        node.innerHTML=`<div id="itemPost[`+index+`]" >
-                            <textarea name="itemPost[`+index+`].text" placeholder="Thêm nội dung" > </textarea>
-                            <input name="itemPost[`+index+`].type" type=hidden value="TEXT">
-                            <input name="itemPost[`+index+`].number" type=hidden value=`+index+`>
-                            <button type="button" value="itemPost[`+index+`]" onclick="deleteItem(event)">X</button>
+        node.innerHTML=`<div id="itemPostList[`+index+`]"  >
+                            <table class="col-lg-12">
+                            <tr>
+                                <td>
+                                    <textarea name="itemPostList[`+index+`].text" style="text-transform: none"> </textarea>
+                                    <input name="itemPostList[`+index+`].type" type=hidden value="TEXT">
+                                    <input name="itemPostList[`+index+`].number" type=hidden value=`+index+`>
+                                </td>
+                                <td style="vertical-align:top">
+                                    <button class="btn btn-secondary" type="button" value="itemPostList[`+index+`]" onclick="deleteItem(event)" style="background-color: black!important;">X</button>
+                                </td>
+                            </tr>
+                            </table>
                         </div>`;
         document.getElementById("ItemList").appendChild(node);
         index++;
     }
     function addImage() {
         var node=document.createElement("div");
-        node.innerHTML=`<div id="itemPost[`+index+`]" >
-                            <img id="itemPost[`+index+`].imgDisplay"  width="100%"/>
-                            <input type="file" id="itemPost[`+index+`].img" name="itemPost[`+index+`].img"  accept="image/*" onchange="displayImg(event)" placeholder="Thêm hình ảnh" >
-                            <input name="itemPost[`+index+`].type" type=hidden value="IMG">
-                            <input name="itemPost[`+index+`].number" type=hidden value=`+index+`>
-                            <button type="button" value="itemPost[`+index+`]" onclick="deleteItem(event)">X</button>
+        node.innerHTML=`<div id="itemPostList[`+index+`]" >
+                            <table class="col-lg-12">
+                            <tr>
+                                <td align="left">
+                                    <img id="itemPostList[`+index+`].textDisplay" />
+                                    <input type="file" id="itemPostList[`+index+`].text" name="itemPostList[`+index+`].text" accept="image/*" onchange="displayImg(event)">
+                                    <input name="itemPostList[`+index+`].type" type=hidden value="IMG">
+                                    <input name="itemPostList[`+index+`].number" type=hidden value=`+index+`>
+                                 </td>
+                                 <td>
+                                    <button class="btn btn-secondary btn-lg" type="button" value="itemPostList[`+index+`]" onclick="deleteItem(event)" style="background-color:black!important;">X</button>
+                                </td>
                         </div>`;
         document.getElementById("ItemList").appendChild(node);
         index++;
@@ -224,9 +235,8 @@
         document.getElementById(event.target.id+'Display').src=(window.URL ? URL : webkitURL).createObjectURL(event.target.files[0]);
     }
     function deleteItem(event){
-         document.getElementById(event.target.value).remove();
+        document.getElementById(event.target.value).remove();
     }
-
 </script>
 </html>
 

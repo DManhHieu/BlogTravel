@@ -67,6 +67,7 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f7f7f7">
                                 <a th:if="${!session.isLogin}" class="dropdown-item" href="/login">Đăng nhập</a>
                                 <a th:if="${!session.isLogin}" class="dropdown-item" href="/signup">Đăng ký</a>
+                                <a th:if="${session.isLogin}" class="dropdown-item" href="#">Thông tin cá nhân</a>
                                 <a th:if="${session.isLogin}" class="dropdown-item" href="/logout">Đăng xuất</a>
                             </div>
                         </div>
@@ -216,21 +217,18 @@
 </section>
 
 
-<!--<footer>
+<footer>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <ul class="social-icons">
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Behance</a></li>
-                    <li><a href="#">Linkedin</a></li>
-                    <li><a href="#">Dribbble</a></li>
+                    <li><a href="#">TRAVEL BLOG</a></li>
                 </ul>
             </div>
         </div>
     </div>
-</footer>-->
+</footer>
+
 <!-- Bootstrap core JavaScript -->
 <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
 <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
