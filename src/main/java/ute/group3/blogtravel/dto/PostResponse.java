@@ -19,4 +19,5 @@ public class PostResponse {
     private String description;
     private Instant Created;
     private List<ItemPost> itemPosts;
+    private boolean browser;
 }

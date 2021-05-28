@@ -22,4 +22,5 @@ public class Post {
     private String description;
     private Instant Created;
     private List<ItemPost> itemPostList;
+    private boolean browser;
 }

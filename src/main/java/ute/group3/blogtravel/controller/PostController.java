@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import sun.invoke.empty.Empty;
 import ute.group3.blogtravel.dto.AuthenticationResponse;
 
 
@@ -50,8 +51,16 @@ public class PostController {
         return "redirect:/post/"+number.toString();
     }
     @GetMapping("/post/{number}")
-    public String ViewPost(@PathVariable int number, Model model){
-        PostResponse postResponse= postService.getPost(number);
+    public String ViewPost(@PathVariable int number, Model model, HttpSession session){
+        AuthenticationResponse authentication=(AuthenticationResponse) session.getAttribute("authentication");
+        String username="";
+        if(authentication!=null){
+            username=authentication.getUsername();
+        }
+        PostResponse postResponse= postService.getPost(number,username);
+        if(postResponse==null){
+            return "redirect:/";
+        }
         model.addAttribute("itemtext", ItemType.TEXT);
         model.addAttribute("itemimg", ItemType.IMG);
         model.addAttribute("postResponse", postResponse);
@@ -62,5 +71,15 @@ public class PostController {
         listPostResponse listPostResponse= postService.getAllPost();
         model.addAttribute("listPostResponse",listPostResponse);
         return "pages/post/listpost";
+    }
+    @GetMapping("post/my")
+    public String MyPost(Model model, HttpSession session){
+        AuthenticationResponse authentication=(AuthenticationResponse) session.getAttribute("authentication");
+        if(authentication==null){
+            return "redirect:/login";
+        }
+        listPostResponse listPostResponse=postService.getPostByUser(authentication.getUsername());
+        model.addAttribute("listPostResponse",listPostResponse);
+        return "pages/post/listmypost";
     }
 }

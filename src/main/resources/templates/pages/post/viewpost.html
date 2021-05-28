@@ -37,6 +37,9 @@
                             <a th:if="${session.isLogin}" class="nav-link" href="/post/new">Viết bài</a>
                         </li>
                         <li class="nav-item">
+                            <a th:if="${session.isLogin}" class="nav-link" href="/post/my">Bài viết của bạn</a>
+                        </li>
+                        <li class="nav-item">
                             <div class="dropdown">
                                 <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Tài khoản<i class="fa fa-caret-down" style="display:inline"></i>
@@ -63,6 +66,9 @@
                     <div class="all-blog-posts">
                         <div class="row">
                             <div class="col-lg-12">
+                                <div>
+                                    <p th:if="${!postResponse.browser}">Đang chờ được duyệt</p>
+                                </div>
                                 <div class="blog-post">
                                     <div class="blog-thumb">
                                         <img th:src="@{'/'+${postResponse.imgHeader}}" width="100%">

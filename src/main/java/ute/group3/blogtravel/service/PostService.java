@@ -31,6 +31,7 @@ public class PostService {
         post.setTitle(postRequest.getTitle());
         post.setDescription(postRequest.getDescription());
         post.setCreated(Instant.now());
+        post.setBrowser(false);
         if( postRepository.findTopByOrderByNumberDesc()==null){
             post.setNumber(0);
         }
@@ -74,9 +75,11 @@ public class PostService {
         return post.getNumber();
     }
 
-    public PostResponse getPost(int number) {
-        PostResponse postResponse=new PostResponse();
+    public PostResponse getPost(int number, String user) {
         Post post=postRepository.findByNumber(number);
+        if(!post.isBrowser() && !post.getUsername().equals(user)) {
+            return null;
+        }
         return  MapPostToPostResponse(post);
     }
     private PostResponse MapPostToPostResponse(Post post){
@@ -88,11 +91,12 @@ public class PostService {
         postResponse.setImgHeader(post.getHeaderImg());
         postResponse.setDescription(post.getDescription());
         postResponse.setAuthorName(userRepository.findByUsername(post.getUsername()).getFullName());
+        postResponse.setBrowser(post.isBrowser());
         return postResponse;
     }
     public listPostResponse getAllPost() {
         List<PostResponse> postResponses=new ArrayList<>();
-        List<Post> listPost= postRepository.findAll();
+        List<Post> listPost= postRepository.findAllByBrowserIsTrue();
         for (Post post: listPost
              ) {
             postResponses.add(MapPostToPostResponse(post));
@@ -113,7 +117,7 @@ public class PostService {
 
     public List<PostResponse> getTopThree() {
         List<PostResponse> postResponses=new ArrayList<>();
-        List<Post> listPost= postRepository.findAll();
+        List<Post> listPost= postRepository.findAllByBrowserIsTrue();
         for (Post post: listPost
         ) {
             postResponses.add(MapPostToPostResponse(post));
@@ -124,6 +128,6 @@ public class PostService {
     }
 
     public PostResponse getTrending() {
-        return getPost(0);
+        return getPost(0,"");
     }
 }

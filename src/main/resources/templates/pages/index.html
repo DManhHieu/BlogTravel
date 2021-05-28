@@ -57,6 +57,9 @@
                         <a th:if="${session.isLogin}" class="nav-link" href="/post/new">Viết bài</a>
                     </li>
                     <li class="nav-item">
+                        <a th:if="${session.isLogin}" class="nav-link" href="/post/my">Bài viết của bạn</a>
+                    </li>
+                    <li class="nav-item">
                         <div class="dropdown">
                             <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Tài khoản<i class="fa fa-caret-down" style="display:inline"></i>
@@ -140,7 +143,7 @@
                                 <div class="sidebar-heading">
                                     <h2>Bài viết nổi bật</h2>
                                 </div>
-                                <div class="content">
+                                <div class="content" th:if="${indexResponse.postTrending}">
                                     <a th:href="@{'/post/'+${indexResponse.postTrending.number}}"><h4 th:utext="${indexResponse.postTrending.title}">(Tựa đề)</h4></a>
                                     <p th:utext="${indexResponse.postTrending.description}"> (Tóm tắt mô tả)</p>
                                     <ul class="post-info">
@@ -213,7 +216,7 @@
 </section>
 
 
-<footer>
+<!--<footer>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -227,7 +230,7 @@
             </div>
         </div>
     </div>
-</footer>
+</footer>-->
 <!-- Bootstrap core JavaScript -->
 <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
 <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
