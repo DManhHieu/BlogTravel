@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 
     <title>Chỉnh sửa thông tin</title>
 
@@ -54,7 +53,7 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f7f7f7">
                                 <a th:if="${!session.isLogin}" class="dropdown-item" href="/login">Đăng nhập</a>
                                 <a th:if="${!session.isLogin}" class="dropdown-item" href="/signup">Đăng ký</a>
-                                <a th:if="${session.isLogin}" class="dropdown-item" href="#">Thông tin cá nhân</a>
+                                <a th:if="${session.isLogin}" class="dropdown-item" href="/user">Thông tin cá nhân</a>
                                 <a th:if="${session.isLogin}" class="dropdown-item" href="/logout">Đăng xuất</a>
                             </div>
                         </div>
@@ -93,44 +92,44 @@
                         <div class="col-lg-8">
                             <div class="sidebar-item contact-form">
                                 <div class="sidebar-heading">
-                                    <h2>Chỉnh sửa thông tin</h2>
+                                    <h2>Chỉnh sửa thông tin: <span th:utext="${userUpdate.username}"></span></h2>
                                 </div>
                                 <div class="content">
-                                    <form action="/user" method="post" th:object="${post}">
+                                    <form action="/user" method="post" th:object="${userUpdate}">
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12">
                                                 <fieldset>
                                                     <label for="hoten"><b>Họ tên: </b></label>
-                                                    <input name="hoten" type="text" id="hoten" required="" style="text-transform: none">
+                                                    <input th:name="fullName" type="text" id="hoten" required="" style="text-transform: none"  th:field="*{fullName}">
                                                 </fieldset>
                                             </div>
                                             <div class="col-md-12 col-sm-12">
                                                 <fieldset>
                                                     <label for="ngaysinh"><b>Ngày sinh: </b></label>
-                                                    <input name="ngaysinh" type="date" id="ngaysinh" required="" style="text-transform: none">
+                                                    <input th:name="datetime" type="date" id="ngaysinh" required="" style="text-transform: none" th:field="${userUpdate.datetime}">
                                                 </fieldset>
                                             </div>
                                             <div class="col-md-12 col-sm-12">
                                                 <fieldset>
                                                     <label for="diachi"><b>Địa chỉ: </b></label>
-                                                    <input name="diachi" type="text" id="diachi" required="" style="text-transform: none">
+                                                    <input th:name="address" type="text" id="diachi" required="" style="text-transform: none" th:field="${userUpdate.address}">
                                                 </fieldset>
                                             </div>
                                             <div class="col-md-12 col-sm-12">
                                                 <fieldset>
                                                     <label for="email"><b>Email: </b></label>
-                                                    <input name="email" type="email" id="email" required="" style="text-transform: none">
+                                                    <input th:name="email" type="email" id="email" required="" style="text-transform: none" th:field="${userUpdate.email}">
                                                 </fieldset>
                                             </div>
-                                            <div class="col-md-12 col-sm-12">
+
+                                            <div class ="col-md-12 col-sm-12">
                                                 <fieldset>
                                                     <div class=”input-group”>
                                                         <label class=”input-group-text”><b>Giới tính:</b></label>
-                                                        <select class=”custom-select”>
-                                                            <option selected>Chọn…</option>
-                                                            <option value=”1″>Nam</option>
-                                                            <option value=”2″>Nữ</option>
-                                                            <option value=”3″>Khác</option>
+                                                        <select class=”custom-select” th:field="${userUpdate.gender}">
+                                                            <option th:name="gender" th:value="Nam" >Nam</option>
+                                                            <option th:name="gender" th:value="Nữ" >Nữ</option>
+                                                            <option th:name="gender" th:value="Khác" >Khác</option>
                                                         </select>
                                                     </div>
                                                 </fieldset>
@@ -139,7 +138,7 @@
                                             <hr>
                                             <div class="col-lg-12">
                                                 <fieldset>
-                                                    <button type="submit" id="form-submit" class="main-button">Lưu</button>
+                                                    <button type="submit" id="form-submit" class="main-button">Luu</button>
                                                 </fieldset>
                                             </div>
                                         </div>

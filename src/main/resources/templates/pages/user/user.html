@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 
     <title>Thông tin cá nhân</title>
 
@@ -54,7 +53,7 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f7f7f7">
                                 <a th:if="${!session.isLogin}" class="dropdown-item" href="/login">Đăng nhập</a>
                                 <a th:if="${!session.isLogin}" class="dropdown-item" href="/signup">Đăng ký</a>
-                                <a th:if="${session.isLogin}" class="dropdown-item" href="#">Thông tin cá nhân</a>
+                                <a th:if="${session.isLogin}" class="dropdown-item" href="/user">Thông tin cá nhân</a>
                                 <a th:if="${session.isLogin}" class="dropdown-item" href="/logout">Đăng xuất</a>
                             </div>
                         </div>
@@ -93,38 +92,38 @@
                         <div class="col-lg-8">
                             <div class="sidebar-item contact-form">
                                 <div class="sidebar-heading">
-                                    <h2>Thông tin cá nhân: Tên user</h2>
+                                    <h2>Thông tin cá nhân: <span th:utext="${userDTO.username}"></span> </h2>
                                 </div>
                                 <div class="align-content-md-between">
-                                    <form action="/newpost" method="post" th:object="${post}" style="border-color:ghostwhite!important; border-width: 0.5px!important; border-style: groove; ">
+                                    <form action="/user/edit" method="get" th:object="${userDTO}" style="border-color:ghostwhite!important; border-width: 0.5px!important; border-style: groove; ">
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12">
                                                 <fieldset>
                                                     <br>
-                                                    &emsp;<label><b>Họ tên:</b></label>  <a>aaa</a>
+                                                    &emsp;<label><b>Họ tên:</b></label> <span th:if="${userDTO.fullName == null}">(trống)</span> <span th:utext="${userDTO.fullName}"></span>
                                                     <!--                                                    <input name="title" type="text" id="title" placeholder="Nhập tiêu đề" required="" style="text-transform: none">-->
                                                 </fieldset>
                                                 <hr>
                                             </div>
                                             <div class="col-md-12 col-sm-12">
                                                 <fieldset>
-                                                    &emsp;<label><b>Ngày sinh:</b></label> <a>aaaa</a>
+                                                    &emsp;<label><b>Ngày sinh:</b></label> <span th:if="${userDTO.datetime == null}">(trống)</span><span th:utext="${userDTO.datetime}"></span>
                                                 </fieldset>
                                             </div>
                                             <div class="col-md-12 col-sm-12">
                                                 <fieldset>
-                                                    &emsp;<label><b>Địa chỉ:</b></label> <a>aaaa</a>
+                                                    &emsp;<label><b>Địa chỉ:</b></label> <span th:if="${userDTO.address == null}">(trống)</span> <span th:utext="${userDTO.address}"></span>
                                                 </fieldset>
                                             </div>
                                             <div class="col-md-12 col-sm-12">
                                                 <fieldset>
-                                                    &emsp;<label><b>Giới tính:</b></label> <a>aaaa</a>
+                                                    &emsp;<label><b>Giới tính:</b></label> <span th:if="${userDTO.gender == null}">(trống)</span><span th:utext="${userDTO.gender}"></span>
                                                 </fieldset>
                                                 <hr>
                                             </div>
                                             <div class="col-md-12 col-sm-12">
                                                 <fieldset>
-                                                    &emsp;<label><b>Email:</b></label> <a>aaaa</a>
+                                                    &emsp;<label><b>Email:</b></label> <span th:if="${userDTO.email == null}">(trống)</span><span th:utext="${userDTO.email}"></span>
                                                 </fieldset>
                                             </div>
                                             <div class="col-md-12 col-sm-12">

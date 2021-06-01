@@ -41,6 +41,11 @@ public class AuthService {
         user.setUsername(registerRequest.getUsername());
         user.setPassword( passwordEncoder.encode(registerRequest.getPassword())); // mã hoá password
         user.setCreated(Instant.now());
+//        String a = "";
+//        user.setGender(a);
+//        user.setFullName(a);
+//        user.setDatetime(a);
+//        user.setAddress(a);
         user.setEnabled(false);
 
         // lưu vào database

@@ -2,6 +2,9 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
     <title th:utext="${postResponse.title}">Title</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
     <!-- Bootstrap core CSS -->
@@ -47,6 +50,7 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f7f7f7">
                                     <a th:if="${!session.isLogin}" class="dropdown-item" href="/login">Đăng nhập</a>
                                     <a th:if="${!session.isLogin}" class="dropdown-item" href="/signup">Đăng ký</a>
+                                    <a th:if="${session.isLogin}" class="dropdown-item" href="/user">Thông tin cá nhân</a>
                                     <a th:if="${session.isLogin}" class="dropdown-item" href="/logout">Đăng xuất</a>
                                 </div>
                             </div>
@@ -57,7 +61,19 @@
         </nav>
     </header>
     <!-- Page Content -->
-
+    <div class="heading-page header-text">
+        <section class="page-heading">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-content">
+                            <h4>Chi tiết bài viết</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <section class="blog-posts grid-system">
         <div class="container">

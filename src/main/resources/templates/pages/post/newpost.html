@@ -59,6 +59,7 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f7f7f7">
                                     <a th:if="${!session.isLogin}" class="dropdown-item" href="/login">Đăng nhập</a>
                                     <a th:if="${!session.isLogin}" class="dropdown-item" href="/signup">Đăng ký</a>
+                                    <a th:if="${session.isLogin}" class="dropdown-item" href="/user">Thông tin cá nhân</a>
                                     <a th:if="${session.isLogin}" class="dropdown-item" href="/logout">Đăng xuất</a>
                                 </div>
                             </div>
