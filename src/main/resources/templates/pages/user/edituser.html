@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 
     <title>Chỉnh sửa thông tin</title>
 
@@ -31,7 +32,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/">Trang chủ
                             <span class="sr-only">(current)</span>
                         </a>
@@ -47,7 +48,7 @@
                     </li>
                     <li class="nav-item">
                         <div class="dropdown">
-                            <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link active" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Tài khoản<i class="fa fa-caret-down" style="display:inline"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f7f7f7">
@@ -126,11 +127,13 @@
                                                 <fieldset>
                                                     <div class=”input-group”>
                                                         <label class=”input-group-text”><b>Giới tính:</b></label>
-                                                        <select class=”custom-select” th:field="${userUpdate.gender}">
-                                                            <option th:name="gender" th:value="Nam" >Nam</option>
-                                                            <option th:name="gender" th:value="Nữ" >Nữ</option>
-                                                            <option th:name="gender" th:value="Khác" >Khác</option>
-                                                        </select>
+                                                        <label>
+                                                            <select class=”custom-select” th:field="${userUpdate.gender}">
+                                                                <option th:name="gender" th:value="Nam" >Nam</option>
+                                                                <option th:name="gender" th:value="Nữ" >Nữ</option>
+                                                                <option th:name="gender" th:value="Khác" >Khác</option>
+                                                            </select>
+                                                        </label>
                                                     </div>
                                                 </fieldset>
                                                 <hr>
@@ -150,7 +153,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </section>
 
@@ -185,7 +187,7 @@
 <script th:src="@{/assets/js/accordions.js}"></script>
 
 
-<script language = "text/Javascript">
+<script>
     cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
     function clearField(t){                   //declaring the array outside of the
         if(! cleared[t.id]){                      // function makes it static and global
