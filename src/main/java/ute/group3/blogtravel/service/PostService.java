@@ -31,7 +31,7 @@ public class PostService {
         post.setTitle(postRequest.getTitle());
         post.setDescription(postRequest.getDescription());
         post.setCreated(Instant.now());
-        post.setBrowser(false);
+        post.setBrowser(true);
         if( postRepository.findTopByOrderByNumberDesc()==null){
             post.setNumber(0);
         }
