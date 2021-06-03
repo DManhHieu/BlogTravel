@@ -117,9 +117,9 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="sidebar-item search">
-                                <form id="search_form" name="gs" method="GET" action="#">
-                                    <input type="text" name="q" class="searchText" placeholder="Tìm kiếm" autocomplete="on">
-                                </form>
+<!--                                <form id="search_form" name="gs" method="GET" action="#">-->
+<!--                                    <input type="text" name="q" class="searchText" placeholder="Tìm kiếm" autocomplete="on">-->
+<!--                                </form>-->
                             </div>
                         </div>
                         <div class="col-lg-12">
@@ -129,10 +129,10 @@
                                 </div>
                                 <div class="content" th:if="${indexResponse.postTrending}">
                                     <a th:href="@{'/post/'+${indexResponse.postTrending.number}}"><h4 th:utext="${indexResponse.postTrending.title}">(Tựa đề)</h4></a>
-                                    <p th:utext="${indexResponse.postTrending.description}"> (Tóm tắt mô tả)</p>
-                                    <ul class="post-info">
-                                        <li><a href="#" th:utext="${indexResponse.postTrending.authorName}">(Người đăng?)</a></li>
-                                    </ul>
+<!--                                    <p th:utext="${indexResponse.postTrending.description}"> (Tóm tắt mô tả)</p>-->
+<!--                                    <ul class="post-info">-->
+<!--                                        <li><a href="#" th:utext="${indexResponse.postTrending.authorName}">(Người đăng?)</a></li>-->
+<!--                                    </ul>-->
                                 </div>
                             </div>
                         </div>
