@@ -77,6 +77,7 @@ public class PostService {
 
     public PostResponse getPost(int number, String user) {
         Post post=postRepository.findByNumber(number);
+        if(post==null) return null;
         if(!post.isBrowser() && !post.getUsername().equals(user)) {
             return null;
         }
