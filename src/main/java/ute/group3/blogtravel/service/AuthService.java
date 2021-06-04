@@ -88,7 +88,6 @@ public class AuthService {
     public AuthenticationResponse login(LoginRequest loginRequest) {
         User user= userRepository.findByUsername(loginRequest.getUsername());
         if(user==null) {
-
             loginRequest.setUsernameError("Không tìm thấy tài khoản");
             return new AuthenticationResponse("", "",loginRequest);
         }
