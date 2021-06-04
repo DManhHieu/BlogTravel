@@ -41,11 +41,6 @@ public class AuthService {
         user.setUsername(registerRequest.getUsername());
         user.setPassword( passwordEncoder.encode(registerRequest.getPassword())); // mã hoá password
         user.setCreated(Instant.now());
-//        String a = "";
-//        user.setGender(a);
-//        user.setFullName(a);
-//        user.setDatetime(a);
-//        user.setAddress(a);
         user.setEnabled(false);
 
         // lưu vào database
@@ -54,7 +49,7 @@ public class AuthService {
         String token= generateVerificationToken(user);
         System.out.println("Gửi mail kích hoạt tới: "+user.getEmail());
         // Gửi mail kích hoạt tài khoản
-        mailService.sendMail(new NotificationEmail("Hãy kích hoạt tài khoản", user.getEmail(), "Cảm ưn bạn đã đăng kí Blog Travel " +
+        mailService.sendMail(new NotificationEmail("Hãy kích hoạt tài khoản", user.getEmail(),"Cảm ơn bạn đã đăng kí Blog Travel " +
                 "hãy click vào url dưới đây để kích hoạt tài khoản: " +
                 "http://localhost:8080/accountVerification/" + token ));
         registerRequest.setSuccess(true);

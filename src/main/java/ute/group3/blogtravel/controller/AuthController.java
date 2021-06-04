@@ -22,7 +22,9 @@ public class AuthController {
 
         registerRequest = authService.signup(registerRequest);
         if(!registerRequest.isSuccess()){
+            String error = "Đã trùng tài khoản! Hãy thử lại";
             model.addAttribute("registerRequest",registerRequest);
+            model.addAttribute("errorMessage", error);
             return "pages/Auth/register";
         }
         return "pages/Auth/registerSuccess";
