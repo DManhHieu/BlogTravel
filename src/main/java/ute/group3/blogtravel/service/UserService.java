@@ -1,12 +1,14 @@
 package ute.group3.blogtravel.service;
 import lombok.AllArgsConstructor;
-import org.springframework.context.ApplicationContext;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
 import ute.group3.blogtravel.Repository.UserRepository;
 import ute.group3.blogtravel.dto.UserDTO;
+import ute.group3.blogtravel.dto.UserRespone;
+import ute.group3.blogtravel.dto.lstUserRespone;
 import ute.group3.blogtravel.model.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -39,5 +41,31 @@ public class UserService {
         user.setEmail(userDTO.getEmail());
         userRepository.save(user);
         return userDTO;
+    }
+    public UserRespone MapUserToUserRespone(User user){
+        UserRespone userRespone= new UserRespone();
+        userRespone.setUserName(user.getUsername());
+        userRespone.setCreated(user.getCreated());
+        userRespone.setEmail(user.getEmail());
+        userRespone.setEnabled(user.getEnabled());
+        return userRespone;
+    }
+
+    public UserRespone EnableAccount(String username, String enable){
+        User user= userRepository.findByUsername(username);
+        user.setEnabled(Boolean.parseBoolean(enable));
+        userRepository.save(user);
+        User userreturn= userRepository.findByUsername(username);
+        UserRespone userRespone= MapUserToUserRespone(userreturn);
+        return userRespone;
+    }
+
+    public lstUserRespone GetAllUser(){
+        List<UserRespone> lstUserRespone= new ArrayList<>();
+        List<User> lstUser= userRepository.findAll();
+        for (User user: lstUser) {
+            lstUserRespone.add(MapUserToUserRespone(user));
+        }
+        return new lstUserRespone(lstUserRespone);
     }
 }

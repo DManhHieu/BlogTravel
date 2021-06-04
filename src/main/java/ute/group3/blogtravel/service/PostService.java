@@ -83,6 +83,11 @@ public class PostService {
         }
         return  MapPostToPostResponse(post);
     }
+
+    public PostResponse getPostForAdmin(int number, String user) {
+        Post post=postRepository.findByNumber(number);
+        return  MapPostToPostResponse(post);
+    }
     private PostResponse MapPostToPostResponse(Post post){
         PostResponse postResponse=new PostResponse();
         postResponse.setItemPosts(post.getItemPostList());
@@ -102,6 +107,14 @@ public class PostService {
              ) {
             postResponses.add(MapPostToPostResponse(post));
 
+        }
+        return new listPostResponse(postResponses);
+    }
+    public listPostResponse getAllPostForAdmin() {
+        List<PostResponse> postResponses=new ArrayList<>();
+        List<Post> listPost= postRepository.findAll();
+        for (Post post: listPost) {
+            postResponses.add(MapPostToPostResponse(post));
         }
         return new listPostResponse(postResponses);
     }
@@ -130,5 +143,15 @@ public class PostService {
 
     public PostResponse getTrending() {
         return getPost(0,"");
+    }
+    public void BrowserPost(int number){
+        Post post= postRepository.findByNumber(number);
+        post.setBrowser(true);
+        postRepository.save(post);
+    }
+
+    public void DeletePost(int number){
+        Post post= postRepository.findByNumber(number);
+        postRepository.delete(post);
     }
 }
