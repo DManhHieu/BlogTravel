@@ -41,7 +41,7 @@ public class PostController {
         return "pages/post/newpost";
     }
     @PostMapping("/post/new")
-    public String savePost(@ModelAttribute(value ="post") PostRequest postRequest, HttpSession session, Model model ) throws IOException {
+    public String savePost(@ModelAttribute(value ="post") PostRequest postRequest, HttpSession session ) throws IOException {
         if(!authentication.requestValid(session)){
             return "redirect:/login";
         }

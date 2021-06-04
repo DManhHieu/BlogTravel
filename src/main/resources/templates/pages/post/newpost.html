@@ -207,9 +207,9 @@
                             <table class="col-lg-12">
                             <tr>
                                 <td>
-                                    <textarea name="itemPostList[`+index+`].text" style="text-transform: none"> </textarea>
-                                    <input name="itemPostList[`+index+`].type" type=hidden value="TEXT">
-                                    <input name="itemPostList[`+index+`].number" type=hidden value=`+index+`>
+                                    <textarea name="itemPost[`+index+`].text" style="text-transform: none"> </textarea>
+                                    <input name="itemPost[`+index+`].type" type=hidden value="TEXT">
+                                    <input name="itemPost[`+index+`].number" type=hidden value=`+index+`>
                                 </td>
                                 <td style="vertical-align:top">
                                     <button class="btn btn-secondary" type="button" value="itemPostList[`+index+`]" onclick="deleteItem(event)" style="background-color: black!important;">X</button>
@@ -222,17 +222,17 @@
     }
     function addImage() {
         var node=document.createElement("div");
-        node.innerHTML=`<div id="itemPostList[`+index+`]" >
+        node.innerHTML=`<div id="itemPost[`+index+`]" >
                             <table class="col-lg-12">
                             <tr>
                                 <td align="left">
-                                    <img id="itemPostList[`+index+`].textDisplay" />
-                                    <input type="file" id="itemPostList[`+index+`].text" name="itemPostList[`+index+`].text" accept="image/*" onchange="displayImg(event)">
-                                    <input name="itemPostList[`+index+`].type" type=hidden value="IMG">
-                                    <input name="itemPostList[`+index+`].number" type=hidden value=`+index+`>
+                                    <img id="itemPost[`+index+`].imgDisplay"  width="100%"/>
+                                    <input type="file" id="itemPost[`+index+`].img" name="itemPost[`+index+`].img"  accept="image/*" onchange="displayImg(event)" placeholder="Thêm hình ảnh" >
+                                    <input name="itemPost[`+index+`].type" type=hidden value="IMG">
+                                    <input name="itemPost[`+index+`].number" type=hidden value=`+index+`>
                                  </td>
                                  <td>
-                                    <button class="btn btn-secondary btn-lg" type="button" value="itemPostList[`+index+`]" onclick="deleteItem(event)" style="background-color:black!important;">X</button>
+                                    <button class="btn btn-secondary btn-lg" type="button" value="itemPost[`+index+`]" onclick="deleteItem(event)" style="background-color:black!important;">X</button>
                                 </td>
                         </div>`;
         document.getElementById("ItemList").appendChild(node);
