@@ -96,9 +96,9 @@
                                             <li><a href="#" th:utext="${postResponse.authorName}">Admin</a></li>
                                             <li><a href="#" th:utext="${#temporals.format(postResponse.created, 'dd/MM/yyyy')}">May 12, 2020</a></li>
                                         </ul>
-                                        <div>
-                                            <p th:utext="${postResponse.description}"></p>
-                                        </div>
+<!--                                        <div>-->
+<!--&lt;!&ndash;                                            <p th:utext="${postResponse.description}"></p>&ndash;&gt;-->
+<!--                                        </div>-->
                                         <div th:each="item: ${postResponse.itemPosts}">
                                             <div th:if="${item.type== itemtext}">
                                                 <p th:utext="${item.text}"></p>

@@ -56,6 +56,8 @@ public class AuthController {
     public String login(@ModelAttribute(value = "loginRequest") LoginRequest loginRequest, Model model, HttpSession session){
         AuthenticationResponse authenticationResponse = authService.login(loginRequest);
         if(authenticationResponse.getAuthenticationToken().isEmpty()){
+            String error = "Sai tài khoản hoặc mật khẩu!";
+            model.addAttribute("errorMessage",error);
             model.addAttribute("loginRequest", authenticationResponse.getLoginRequest());
             return "pages/Auth/login";
         }
