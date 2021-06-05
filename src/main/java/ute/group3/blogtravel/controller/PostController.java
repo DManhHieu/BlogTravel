@@ -21,6 +21,7 @@ import ute.group3.blogtravel.service.authenticationService;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 
 @Controller
@@ -80,5 +81,22 @@ public class PostController {
         listPostResponse listPostResponse=postService.getPostByUser(authentication.getUsername());
         model.addAttribute("listPostResponse",listPostResponse);
         return "pages/post/listmypost";
+    }
+
+    @GetMapping("/post/{category}/list")
+    public String ViewPost(@PathVariable String category, Model model, HttpSession session){
+//        if(!authentication.requestValid(session)){
+//            return "redirect:/post/{category}/list";
+//        }
+        listPostResponse postResponse = postService.getCategory(category);
+        if(postResponse==null){
+            return "redirect:/";
+        }
+        model.addAttribute("itemtext", ItemType.TEXT);
+        model.addAttribute("itemimg", ItemType.IMG);
+        model.addAttribute("postResponse", postResponse);
+        model.addAttribute("category", category);
+
+        return "/pages/post/category";
     }
 }

@@ -28,6 +28,7 @@ public class PostService {
     public Long save(PostRequest postRequest, String user) throws IOException {
         Post post=new Post();
         post.setUsername(user);
+        post.setCategory(postRequest.getCategory());
         post.setTitle(postRequest.getTitle());
         post.setDescription(postRequest.getDescription());
         post.setCreated(Instant.now());
@@ -91,6 +92,7 @@ public class PostService {
     private PostResponse MapPostToPostResponse(Post post){
         PostResponse postResponse=new PostResponse();
         postResponse.setItemPosts(post.getItemPostList());
+        postResponse.setCategory(post.getCategory());
         postResponse.setCreated(post.getCreated());
         postResponse.setNumber(post.getNumber());
         postResponse.setTitle(post.getTitle());
@@ -153,5 +155,16 @@ public class PostService {
     public void DeletePost(int number){
         Post post= postRepository.findByNumber(number);
         postRepository.delete(post);
+    }
+
+    public listPostResponse getCategory(String category) {
+        List<PostResponse> postResponses=new ArrayList<>();
+        List<Post> postCategory = postRepository.findByCategory(category);
+        for (Post post: postCategory
+        ) {
+            postResponses.add(MapPostToPostResponse(post));
+
+        }
+        return new listPostResponse(postResponses);
     }
 }

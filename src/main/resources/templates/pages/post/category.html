@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chủ đề</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon"  type="image/png" th:href="@{/favicon.ico}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" th:href="@{/assets/css/fontawesome.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/templatemo-stand-blog.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/owl.css}">
+</head>
+<body>
+<!-- Header -->
+<header class="">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/"><h2>Travel Blog<em>.</em></h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Trang chủ
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/post/">Bài viết</a>
+                    </li>
+                    <li class="nav-item" th:if="${session.isLogin}" >
+                        <a class="nav-link" href="/post/new">Viết bài</a>
+                    </li>
+                    <li class="nav-item active" th:if="${session.isLogin}">
+                        <a  class="nav-link" href="/post/my">Bài viết của bạn</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tài khoản<i class="fa fa-caret-down" style="display:inline"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #f7f7f7">
+                                <a th:if="${!session.isLogin}" class="dropdown-item" href="/login">Đăng nhập</a>
+                                <a th:if="${!session.isLogin}" class="dropdown-item" href="/signup">Đăng ký</a>
+                                <a th:if="${session.isLogin}" class="dropdown-item" href="/user">Thông tin cá nhân</a>
+                                <a th:if="${session.isLogin}" class="dropdown-item" href="/logout">Đăng xuất</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Page Content -->
+<!-- Banner Starts Here -->
+<div class="heading-page header-text">
+    <section class="page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-content">
+                        <h4>Travel BLog</h4>
+                        <h2 th:utext="'Chủ đề: '+${category}">Chủ đề</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Banner Ends Here -->
+
+<section class="blog-posts grid-system">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="all-blog-posts">
+                    <div class="row">
+                        <div class="col-lg-6" th:each="item : ${postResponse.listPost}">
+                            <div class="blog-post">
+                                <div class="blog-thumb">
+                                    <img th:src="@{'/'+${item.imgHeader}}" width="510px" height="250px">
+                                </div>
+                                <div class="down-content">
+                                    <p th:if="${!item.browser}">Chưa được duyệt</p>
+                                    <a th:href="@{'/post/'+${item.number}}"><h4 th:utext="${item.title}">Donec tincidunt leo</h4></a>
+                                    <ul class="post-info">
+                                        <li><a href="#" th:utext="${item.authorName}">Admin</a></li>
+                                        <li><a href="#" th:utext="${#temporals.format(item.created,'dd/MM/yyyy HH:mm')}">May 31, 2020</a></li>
+                                        <!--                    <li><a href="#">12 Comments</a></li>-->
+                                    </ul>
+                                    <p th:utext="${#strings.abbreviate(item.description,100)}">Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                                     <div class="post-options">
+                                         <div class="row">
+                                             <div class="col-lg-12">
+                                                 <ul class="post-tags">
+                                                     <li><i class="fa fa-tags"></i></li>
+                                                     <li><a th:href="@{/post/{category}/list(category=${category})}" th:utext="${category}"></a></li>
+                                                 </ul>
+                                             </div>
+                                         </div>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="social-icons">
+                    <li><a href="/">Travel Blog</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-12">
+                <div class="copyright-text">
+                    <p>Copyright 2020 Travel Blog.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bootstrap core JavaScript -->
+<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+
+<!-- Additional Scripts -->
+<script th:src="@{/assets/js/custom.js}"></script>
+<script th:src="@{/assets/js/owl.js}"></script>
+<script th:src="@{/assets/js/slick.js}"></script>
+<script th:src="@{/assets/js/isotope.js}"></script>
+<script th:src="@{/assets/js/accordions.js}"></script>
+
+
+<script language = "text/Javascript">
+    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+    function clearField(t){                   //declaring the array outside of the
+        if(! cleared[t.id]){                      // function makes it static and global
+            cleared[t.id] = 1;  // you could use true and false, but that's more typing
+            t.value='';         // with more chance of typos
+            t.style.color='#fff';
+        }
+    }
+</script>
+</body>
+</html>

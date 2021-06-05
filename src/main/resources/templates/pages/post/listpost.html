@@ -88,7 +88,7 @@
                             <div class="col-lg-6" th:each="item : ${listPostResponse.listPost}">
                                 <div class="blog-post">
                                     <div class="blog-thumb">
-                                        <img th:src="@{'/'+${item.imgHeader}}" width="100%">
+                                        <img th:src="@{'/'+${item.imgHeader}}" width="510px" height="250px">
                                     </div>
                                     <div class="down-content">
                                         <p th:if="${!item.browser}">Chưa được duyệt</p>
@@ -99,17 +99,16 @@
 <!--                                            <li><a href="#">12 Comments</a></li>-->
                                         </ul>
                                         <p th:utext="${#strings.abbreviate(item.description,100)}">Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
-                                       <!-- <div class="post-options">
+                                        <div class="post-options">
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <ul class="post-tags">
                                                         <li><i class="fa fa-tags"></i></li>
-                                                        <li><a href="#">Best Templates</a>,</li>
-                                                        <li><a href="#">TemplateMo</a></li>
+                                                        <li><a th:href="@{/post/{category}/list(category=${item.category})}" th:utext="${item.category}"></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>-->
+                                        </div>
                                     </div>
                                 </div>
                             </div>

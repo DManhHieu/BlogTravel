@@ -118,6 +118,25 @@
                                                     </fieldset>
                                                 </div>
                                                 <div class="col-md-12 col-sm-12">
+<!--                                                    <fieldset>-->
+<!--                                                        <label for="topic">Chủ đề:</label>-->
+<!--                                                        <input type="text" th:field="*{category}"  id="topic" placeholder="Nhập tiêu đề" required="" style="text-transform: none">-->
+<!--                                                    </fieldset>-->
+                                                    <fieldset>
+                                                        <div class=”input-group”>
+                                                            <label class=”input-group-text”><b>Giới tính:</b></label>
+                                                            <label>
+                                                                <select class=”custom-select” th:field="*{category}">
+                                                                    <option th:name="category" th:value="'Con người'" >Con người</option>
+                                                                    <option th:name="category" th:value="'Văn hóa'" >Văn hóa</option>
+                                                                    <option th:name="category" th:value="'Ăn uống'" >Ăn uống</option>
+                                                                    <option th:name="category" th:value="'Nơi ở'" >Nơi ở</option>
+                                                                </select>
+                                                            </label>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12">
                                                     <fieldset>
                                                         <label for="description">Mô tả:</label>
                                                         <textarea th:field="*{description}"   rows="10" type="text" id="description" placeholder="Mô tả ở đây nhé!" required="" style="text-transform: none"></textarea>

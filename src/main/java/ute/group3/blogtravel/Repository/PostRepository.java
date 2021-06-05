@@ -13,4 +13,5 @@ public interface PostRepository extends MongoRepository<Post,String> {
     Post findByNumber(int number);
     List<Post> findByUsername(String username);
     List<Post> findAllByBrowserIsTrue();
+    List<Post> findByCategory(String category);
 }

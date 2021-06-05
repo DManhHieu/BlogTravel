@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 public class PostRequest {
     private String Title;
+    private String category;
     private String description;
     private MultipartFile imgHeader;
     private List<ItemPostRequest> itemPost;

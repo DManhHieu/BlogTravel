@@ -14,6 +14,7 @@ import java.util.List;
 public class PostResponse {
     private String Title;
     private Long number;
+    private String category;
     private String imgHeader;
     private String authorName;
     private String description;

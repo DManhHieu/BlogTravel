@@ -27,13 +27,13 @@
 <body>
 
 <!-- ***** Preloader Start ***** -->
-<div id="preloader">
-    <div class="jumper">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</div>
+<!--<div id="preloader">-->
+<!--    <div class="jumper">-->
+<!--        <div></div>-->
+<!--        <div></div>-->
+<!--        <div></div>-->
+<!--    </div>-->
+<!--</div>-->
 <!-- ***** Preloader End ***** -->
 
 <!-- Header -->
@@ -89,10 +89,10 @@
                         <div class="col-lg-12" th:each="item : ${indexResponse.listPost}">
                             <div class="blog-post">
                                 <div class="blog-thumb">
-                                    <img th:src="@{'/'+${item.imgHeader}}" width="100%">
+                                    <img th:src="@{'/'+${item.imgHeader}}" width="510px" height="365px" alt="">
                                 </div>
                                 <div class="down-content">
-                                 <!--   <span>(Chủ đề?)</span>-->
+                                    <span th:utext="${item.category}"></span>
                                     <a th:href="@{'/post/'+${item.number}}"><h4 th:utext="${item.title}">(Tựa đề)</h4></a>
                                     <ul class="post-info">
                                         <li><a href="#" th:utext="${item.authorName}">(Người đăng?)</a></li>
@@ -101,10 +101,21 @@
                                     </ul>
                                     <!--                      <p>Stand  is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">Contact TemplateMo</a> for more info. Thank you.</p>-->
                                     <p th:utext="${item.description}"> (Tóm tắt mô tả)</p>
+                                <div class="post-options">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <ul class="post-tags">
+                                                <li><i class="fa fa-tags"></i></li>
+                                                <li><a th:href="@{/post/{category}/list(category=${item.category})}" th:utext="${item.category}"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-12">
+                    </div>
+                </div>
+
+                            <div class="col-lg-12">
                             <div class="main-button">
                                 <a href="/post">Xem tất cả bài viết</a>
                             </div>
@@ -128,7 +139,7 @@
                                     <h2>Bài viết nổi bật</h2>
                                 </div>
                                 <div class="content" th:if="${indexResponse.postTrending}">
-                                    <a th:href="@{'/post/'+${indexResponse.postTrending.number}}"><h4 th:utext="${indexResponse.postTrending.title}">(Tựa đề)</h4></a>
+                                    <a th:href="@{'/post/'+${indexResponse.postTrending.number}}"><h5 th:utext="${indexResponse.postTrending.title}" style="color: black!important;"></h5></a>
 <!--                                    <p th:utext="${indexResponse.postTrending.description}"> (Tóm tắt mô tả)</p>-->
 <!--                                    <ul class="post-info">-->
 <!--                                        <li><a href="#" th:utext="${indexResponse.postTrending.authorName}">(Người đăng?)</a></li>-->
@@ -143,11 +154,11 @@
                                 </div>
                                 <div class="content">
                                     <ul>
-                                        <div th:each="item: ${indexResponse.listTopic}">
-                                            <li><a href="#" th:utext="${item.name}"> </a> </li>
-                                        </div>
+                                        <li><a th:href="@{/post/{category}/list(category='Con người')}"><h5>- Con người</h5> </a></li>
+                                        <li><a th:href="@{/post/{category}/list(category='Du lịch')}"><h5>- Văn hóa </h5> </a></li>
+                                        <li><a th:href="@{/post/{category}/list(category='Ăn uống')}"><h5>- Ăn uống</h5> </a></li>
+                                        <li><a th:href="@{/post/{category}/list(category='Nơi ở')}"><h5>- Nơi ở </h5></a></li>
                                     </ul>
-
                                 </div>
                             </div>
                         </div>
