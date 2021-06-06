@@ -32,7 +32,7 @@ public class PostService {
         post.setTitle(postRequest.getTitle());
         post.setDescription(postRequest.getDescription());
         post.setCreated(Instant.now());
-        post.setBrowser(true);
+        post.setBrowser(false);
         if( postRepository.findTopByOrderByNumberDesc()==null){
             post.setNumber(0);
         }
@@ -144,7 +144,7 @@ public class PostService {
     }
 
     public PostResponse getTrending() {
-        return getPost(0,"");
+        return getPost(13,"");
     }
     public void BrowserPost(int number){
         Post post= postRepository.findByNumber(number);

@@ -1,0 +1,101 @@
+[{
+  "_id": {
+    "$oid": "60a67676cb64676f00007649"
+  },
+  "fullName": "blog du lịch ",
+  "username": "18110288",
+  "password": "$2a$10$lhHqjZgqSDsvNT668im39uzob84rYBI4UPyQoVPHpjoLYz3rgU9qe",
+  "email": "ngochoang0109giolinh@gmail.com",
+  "Created": {
+    "$date": "2021-05-20T14:47:18.897Z"
+  },
+  "Enabled": true,
+  "address": "tp.hcm",
+  "datetime": "2021-05-31",
+  "gender": "Nam",
+  "_class": "ute.group3.blogtravel.model.User"
+},{
+  "_id": {
+    "$oid": "60a67c0fc322886d98f2502d"
+  },
+  "username": "hoang",
+  "password": "$2a$10$CGebkjLcPTC5T9C6Kxpr9OgqH2LsO3T.TgJqRa0Sl4UDUfStDDnqS",
+  "email": "ngochoang0109giolinh@gmail.com",
+  "Created": {
+    "$date": "2021-05-20T15:11:11.845Z"
+  },
+  "Enabled": true,
+  "_class": "ute.group3.blogtravel.model.User"
+},{
+  "_id": {
+    "$oid": "60a76845cf66065a44ddbe1d"
+  },
+  "username": "nhom03",
+  "password": "$2a$10$WaAUhdnaYaDDpVqpqhZ9b.FTdODvBMh0s3CCGpoJRZ5AiA1yMQ5Yi",
+  "email": "ngochoang0109giolinh@gmail.com",
+  "Created": {
+    "$date": "2021-05-21T07:59:01.423Z"
+  },
+  "Enabled": true,
+  "_class": "ute.group3.blogtravel.model.User"
+},{
+  "_id": {
+    "$oid": "60a76f356d7083278c20d5d0"
+  },
+  "fullName": "Nhóm 03",
+  "username": "utenhom03",
+  "password": "$2a$10$WGDLVDasB1mW975xqI7sm.gBRoZ8db18pdjWwnR3IbiBp8z4maFsO",
+  "email": "ngochoang0109giolinh@gmail.com",
+  "Created": {
+    "$date": "2021-05-21T08:28:37.173Z"
+  },
+  "Enabled": true,
+  "address": "tp.hcm",
+  "datetime": "2021-06-06",
+  "gender": "Nữ",
+  "_class": "ute.group3.blogtravel.model.User"
+},{
+  "_id": {
+    "$oid": "60a8eda9b0771c25399c0566"
+  },
+  "username": "hung",
+  "password": "$2a$10$p/RAFsKezMkp9gdxr/L2pOfdqI13I6ho0h7qbZXPR26Nwolur0q2O",
+  "email": "ngochoang0109giolinh@gmail.com",
+  "Created": {
+    "$date": "2021-05-22T11:40:25.466Z"
+  },
+  "Enabled": false,
+  "_class": "ute.group3.blogtravel.model.User"
+},{
+  "_id": {
+    "$oid": "60b976cfb6f297528b075d41"
+  },
+  "fullName": "NgocHoangTran",
+  "username": "user",
+  "password": "$2a$10$aKA0Qn3mcALRjFHlAS.4vOqV12WPI2S3hmDUAuaAZVQ0Xbd.EBAha",
+  "email": "ngochoang0109giolinh@gmail.com",
+  "Created": {
+    "$date": "2021-06-04T00:41:51.630Z"
+  },
+  "Enabled": true,
+  "address": "tp.hcm",
+  "datetime": "2021-06-25",
+  "gender": "Nam",
+  "_class": "ute.group3.blogtravel.model.User"
+},{
+  "_id": {
+    "$oid": "60bc4ab6b349ae0d5a7835b6"
+  },
+  "fullName": "ute",
+  "username": "ute",
+  "password": "$2a$10$6hKAhn1VZG3N/HJlV010v.pLs0Fz8Zno5feZZ8JTTdpVscPq8yNCa",
+  "email": "ngochoang0109giolinh@gmail.com",
+  "Created": {
+    "$date": "2021-06-06T04:10:30.635Z"
+  },
+  "Enabled": false,
+  "address": "tp.hcm",
+  "datetime": "2021-06-06",
+  "gender": "Nam",
+  "_class": "ute.group3.blogtravel.model.User"
+}]

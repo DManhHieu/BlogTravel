@@ -1,0 +1,352 @@
+[{
+  "_id": {
+    "$oid": "60bbb4cf9047ce483e7e7df3"
+  },
+  "number": 3,
+  "category": "Ăn uống",
+  "username": "user",
+  "headerImg": "img/postPhoto/3/6.jpg",
+  "Title": "Người bản địa Singapore ăn gì?",
+  "description": "Singapore là quốc gia đa dân tộc, đa văn hóa chính vì thế mà nền ẩm thực của quốc đảo Sư tử vô cùng phong phú. Ẩm thực của Singapore một phần có ảnh hưởng từ nền ẩm thực của các nước láng giềng Malaysia và Indonesia.",
+  "Created": {
+    "$date": "2021-06-05T17:30:55.711Z"
+  },
+  "itemPostList": [
+    {
+      "text": " 1. Cơm gà Hải Nam\r\n\r\nKhông còn nghi ngờ gì nữa khi cơm gà Hải Nam đứng đầu danh sách những món được yêu thích ở Singapore. Ngay cả người bản địa cũng xem đây là món ăn truyền thống không thể thiếu.\r\n\r\nCơm gà Hải Nam có gì mà có sức hút đến thế? Làm nên hương vị khó quên của món ăn này chính là cơm được nấu với nước dùng gà và nước dừa tạo sự thơm ngon khó cưỡng. Thịt gà mềm, mộng nước ăn cùng với các loại nước chấm như xì dầu, gừng tỏi, ớt băm nhuyễn. Tất cả tạo nên sự hài hoà không thể hoàn hảo hơn.",
+      "type": "TEXT",
+      "number": 0
+    },
+    {
+      "text": "img/postPhoto/3/7.jpg",
+      "type": "IMG",
+      "number": 1
+    },
+    {
+      "text": " Ở Singapore một dĩa cơm gà Hải Nam thường có giá từ 3 đến 7 đô Singapore, dễ dàng tìm thấy ở hawker. Tuy vậy, món ăn truyền thống này còn được nâng cấp lên một phiên bản 5 sao và có giá 32 đô Sing. Cơm gà Hải Nam 32 đô là món ăn trứ danh của nhà hàng Chatter Box, khách sạn Mandarin Orchard, được xếp vào những trải nghiệm cao cấp nên thử ở Singapore 1 lần trong đời cho biết.\r\n\r\nCòn một số địa chỉ người bản địa thường hay lui tới để thưởng thức món ăn này như:\r\n\r\nBoon Tong Kee\r\n\r\nĐịa chỉ: 399, 401 & 403 Balestier Road (Toa Payoh MRT Station)\r\n\r\nGiờ mở cửa: 11:00 am – 4:45 pm\r\n\r\nĐiện thoại đặt bàn: +65 6254 3937\r\n\r\nYet Con\r\n\r\nĐịa chỉ: 25 Purvis Street, Singapore (City Hall hoặc Bugis MRT station)\r\n\r\nGiờ mở cửa: 11 am – 9:30 pm\r\n\r\nGiá: $18 SGD (phần nửa con gà)\r\n\r\n2. Cháo ếch Singapore\r\n\r\nMột món đặc sản Singapore khác do chính người Sing sáng chế đó chính là cháo ếch. Món cháo ếch ngon là cháo trắng phải được nấu đặc sánh mịn, ếch xào lăn vị phải đậm đà để ăn cùng với cháo. Tô cháo ếch được cho thêm hành, ớt tăng thêm hương vị của món ăn.\r\n\r\nLạ là cháo ếch thích hợp ăn vào mọi thời điểm dù là ăn sáng hay ăn khuya. Đặc biệt, đây là món ăn khuya được người bản địa yêu thích vì những quán cháo ếch thường mở rất khuya. Còn gì thích bằng ngồi tám với bạn bè với nồi cháo ếch nóng hổi, nghi ngút khói. Vì thế, không chỉ làm say lòng khách du lịch mà món cháo ếch là lựa chọn của nhiều người Singapore khi tìm kiếm một món ăn “ấm lòng”.",
+      "type": "TEXT",
+      "number": 2
+    }
+  ],
+  "browser": true,
+  "_class": "ute.group3.blogtravel.model.Post"
+},{
+  "_id": {
+    "$oid": "60bbb5889047ce483e7e7df4"
+  },
+  "number": 4,
+  "category": "Con người",
+  "username": "user",
+  "headerImg": "img/postPhoto/4/8.jpg",
+  "Title": "Kinh nghiệm du lịch Phú Quý: Review siêu tàu superdong",
+  "description": "Đây là lầu đầu tiên mình đi Phú Quý, cách đây không lâu thì bạn mình đi Phú Quý phải ngồi tau đánh cá để ra tới đảo, nghe đâu mất 5 tiếng. Sau khi nghe tin tàu superdong mở chuyến Phan Thiết – Phú Quý mình đã lăm le muốn đi, mã tới bây giờ mới đi được.\r\n\r\n",
+  "Created": {
+    "$date": "2021-06-05T17:34:00.152Z"
+  },
+  "itemPostList": [
+    {
+      "text": " HỆ THỐNG ĐẶT VÉ TIỆN LỢI\r\nTính mình vốn rất thích những gì tiện lợi, đặc biệt những dịch vụ có thể đặt online, vừa tiết kiệm thời gian vừa tiết kiệm chi phí ( in vé, chi phí di chuyển đi lại). Mình mò lên google search supper dong và rất may có hệ thống booking online, nhân tiện mình hướng dẫn các bạn đặt vé supperdong luôn nhé, cách này các bạn có thể đặt được tất cả những chặng tàu supperdong khai thác.\r\n\r\nBƯỚC 1: Đầu tiên các bạn vào website http://online.superdong.com.vn/\r\n\r\nSau đó các bạn chọn hình thức mua vé khứ hồi hoặc 1 chiều như hình bên dưới",
+      "type": "TEXT",
+      "number": 0
+    },
+    {
+      "text": "img/postPhoto/4/9.jpg",
+      "type": "IMG",
+      "number": 1
+    },
+    {
+      "text": " Tiếp theo các bạn chọn chặng mà mình muốn đi, sau đó chọn số người vào thời gian như hình, Sau khi chọn xong các bạn bấm tìm vé",
+      "type": "TEXT",
+      "number": 2
+    }
+  ],
+  "browser": true,
+  "_class": "ute.group3.blogtravel.model.Post"
+},{
+  "_id": {
+    "$oid": "60bc1331bcf0382d95781c82"
+  },
+  "number": 13,
+  "category": "Ăn uống",
+  "username": "18110288",
+  "headerImg": "img/postPhoto/13/MG_0253-1.jpg",
+  "Title": "Các Món Nướng Ngon Ở Việt Nam Trở Thành Đặc Sản Khắp Nơi, Với Gợi Ý Dưới Đây Sẽ Cho Bạn Thêm Nhiều Lựa Chọn Ẩm Thực Trong Chuyến Đi.",
+  "description": "Các món nướng ngon ở Việt Nam dần trở thành đặc sản nổi tiếng khắp nơi. Ẩm thực Việt Nam đa dạng và phong phú, từ nguyên liệu chế biến đến cách chế biến, và cách bày trí cũng vô cùng đẹp mắt. Dưới đây, chúng tôi xin chia sẻ các món nướng ngon ở Việt Nam thơm nức mũi với tiêu chí ngon, sạch tha hồ thưởng thức.\r\nĐồ nướng luôn là lựa chọn ưa thích của đại đa số người yêu ẩm thực, món nướng được sử dụng hầu hết trong các món ăn, đặc biệt món nướng được xem là lựa chon lý tưởng cho các buổi họp mặt gia đình, chuyến cắm trại vào cuối tuần. Vậy ở Việt Nam có những món nướng nào làm nên đặc sản và nổi tiếng khắp nơi, mời các bạn cùng tham khảo.",
+  "Created": {
+    "$date": "2021-06-06T00:13:36.949Z"
+  },
+  "itemPostList": [
+    {
+      "number": 0
+    },
+    {
+      "text": " Bún đỏ, phở lho6, cơm lam... đều là món ăn đặc trưng của vùng đất Đắk Lắk. Trong đó, gà nướng cơm lam là đặc sản không nên bỏ lỡ khi du lịch tại đây. Một trong những đặc sản núi rừng nổi tiếng của người đồng bào Tây Nguyên, món gà nướng cơm lam có xuất phát từ đồng bào dân tộc Ê Đê ở Buôn Đôn, Đắk Lắk. Sau này, đặc sản được người dân Tây Nguyên chế biến với nhiều phiên bản khác nhau.\r\nNguyên liệu chính sẽ là gà, phải là những con gà thả vườn, gà chạy bộ, thịt săn chắc, lớp da mỏng giòn sau khi nướng sẽ khiến thực khách không cảm thấy ngấy mỡ. Gà được nướng thường là gà tơ chỉ nặng trên dưới 1kg. Sau khi chọn gà, bước tiếp theo là sơ chế và ướp cùng các loại gia vị như: như sả, hành tím, tỏi giã nhuyễn, ngũ vị hương, mật ong, tiêu, nước mắm, muối và các loại lá rừng… sau cùng là kẹp que tre mang đi nướng.",
+      "type": "TEXT",
+      "number": 1
+    },
+    {
+      "text": "img/postPhoto/13/fada9cd239c7bb300014741bb627e752.jpg",
+      "type": "IMG",
+      "number": 2
+    }
+  ],
+  "browser": true,
+  "_class": "ute.group3.blogtravel.model.Post"
+},{
+  "_id": {
+    "$oid": "60bc143ebcf0382d95781c83"
+  },
+  "number": 14,
+  "category": "Ăn uống",
+  "username": "18110288",
+  "headerImg": "img/postPhoto/14/8ad6ee37febc09bd8c3a45f078764654.jpg",
+  "Title": "PHAI PHỐ HỘI AN - QUÁN CÀ PHÊ TÌM VỀ NHỮNG NGÀY XƯA CŨ.",
+  "description": "Cuộc sống hiện đại, nhưng chỉ có trong lòng Hội An mới thấy màu sắc của sự bình yên, cổ kính, lâu đời nhưng lại rất là nhiệt huyết. Phai Phố Cà Phê : 59 Phan Châu Trinh , Hội An",
+  "Created": {
+    "$date": "2021-06-06T00:18:06.245Z"
+  },
+  "itemPostList": [
+    {
+      "text": "img/postPhoto/14/e3de2d0d661e9011ab82d38bd77521c9.jpg",
+      "type": "IMG",
+      "number": 0
+    },
+    {
+      "text": "img/postPhoto/14/e3de2d0d661e9011ab82d38bd77521c9.jpg",
+      "type": "IMG",
+      "number": 1
+    }
+  ],
+  "browser": true,
+  "_class": "ute.group3.blogtravel.model.Post"
+},{
+  "_id": {
+    "$oid": "60bc15d9bcf0382d95781c85"
+  },
+  "number": 15,
+  "category": "Con người",
+  "username": "18110288",
+  "headerImg": "img/postPhoto/15/1411201742905263198-372577-1510655696-680x0-1510709682_680x0.jpeg",
+  "Title": "Cùng khám phá những dịch vụ cao cấp tại khu nghĩ dưỡng cao cấp Naman Retreat Đà Nẵng",
+  "description": "Naman Retreat là khu nghỉ dưỡng Resort 5 sao tại Đà Nẵng với rất nhiều dịch vụ nghỉ dưỡng đáng để khách du lịch ghé thăm khi đến thành phố này.",
+  "Created": {
+    "$date": "2021-06-06T00:24:57.949Z"
+  },
+  "itemPostList": [
+    {
+      "text": "img/postPhoto/15/911201734364051961-610688-1510217016_680x0.jpeg",
+      "type": "IMG",
+      "number": 0
+    },
+    {
+      "text": " Men theo lối đi quanh co với từng hàng tre, trúc bao phủ, các quan khách được hòa mình vào thiên nhiên, tìm hiểu các nền văn hóa giàu bản sắc của Việt Nam khi tham quan kiến trúc tre nứa, tinh hoa ẩm thực Việt, âm nhạc truyền thống và trang phục dân tộc.\r\n\r\n",
+      "type": "TEXT",
+      "number": 1
+    },
+    {
+      "text": "img/postPhoto/15/9112017421496226061-399147-1510217014_680x0.jpeg",
+      "type": "IMG",
+      "number": 2
+    },
+    {
+      "text": " Naman Retreat được Tập đoàn Empire Group phát triển, trải dài trên bãi biển Đà Nẵng – một trong sáu bờ biển quyến rũ nhất hành tinh, theo Tạp chí Forbes (Mỹ). Nơi đây cũng được World Travel Award bình chọn là khu nghỉ dưỡng hàng đầu châu Á suốt hai năm liên tiếp (2016 và 2017); khu nghỉ dưỡng chăm sóc sức khỏe toàn diện hàng đầu Việt Nam năm 2016, khu nghỉ dưỡng có dịch vụ tốt nhất 2015 và 2016…",
+      "type": "TEXT",
+      "number": 3
+    },
+    {
+      "text": "img/postPhoto/15/911201758306087332-585994-1510217014_680x0.jpeg",
+      "type": "IMG",
+      "number": 4
+    },
+    {
+      "text": "img/postPhoto/15/9112017211850455873-725694-1510217013_680x0.jpeg",
+      "type": "IMG",
+      "number": 5
+    }
+  ],
+  "browser": true,
+  "_class": "ute.group3.blogtravel.model.Post"
+},{
+  "_id": {
+    "$oid": "60bc1637bcf0382d95781c86"
+  },
+  "number": 16,
+  "category": "Con người",
+  "username": "18110288",
+  "headerImg": "img/postPhoto/16/Superior-room-khách-sạn-4-sao-Đà-Nẵng.jpg",
+  "Title": "Khách sạn 4 sao Đà Nẵng giá rẻ cho kỳ nghỉ hè của bạn",
+  "description": "Trong suốt một năm dài làm việc và học tập thì có lẽ kỳ nghỉ hè là thời điểm thư giãn quý giá nhất dành cho bạn và gia đình. Điểm đến được nhiều du khách yêu thích chính là thành phố biển Đà Nẵng với nhiều danh lam thắng cảnh đẹp cùng với bãi biển Mỹ Khê tuyệt vời.",
+  "Created": {
+    "$date": "2021-06-06T00:26:31.119Z"
+  },
+  "itemPostList": [
+    {
+      "text": "Nghỉ dưỡng tại Diamond Sea – khách sạn 4 sao Đà Nẵng gần biển Mỹ Khê  – du khách sẽ có một không gan thoải mái nhất để tận hưởng kỳ nghỉ hè đồng thời sẽ có rất nhiều dịch vụ giải trí gia tăng cho bạn lựa chọn.\r\n\r\nVới vị trí thuận lợi ngay đối diện bãi biển Mỹ Khê, bạn sẽ dễ dàng ra bãi tắm đẹp nhất của Đà Nẵng hàng ngày để tận hưởng làn nước biển trong xanh hiền hòa, bãi cát vàng mịn màng thật quyến rũ.\r\n\r\nNếu bạn không thích tắm biển thì bể bơi ngoài trời khách sạn biển Đà Nẵng Diamond Sea tại tầng 21 sẽ là sự lựa chọn hoàn hảo cho ban, với tầm nhìn toàn cảnhbãi biển Mỹ Khê, bạn sẽ tận hưởng cảm giác được đắm mình trong hồ bơi giữa lòng đại dương bao la.",
+      "type": "TEXT",
+      "number": 0
+    },
+    {
+      "text": "img/postPhoto/16/Bể-bơi-diamond-Sea-khách-sạn-4-sao-Đà-Nẵng.jpg",
+      "type": "IMG",
+      "number": 1
+    },
+    {
+      "text": " Nghỉ dưỡng tại Diamond Sea – khách sạn 4 sao gần biển Mỹ Khê Đà Nẵng – du khách sẽ dễ dàng thưởng thức những hải sản địa phương cực ngọn với giá cả rất hợp lý.\r\n\r\nĐược đánh bắt chính ở ngư trường truyền thống Hoàng Sa, hải sản của biển Đà Nẵng từ lâu đã làm nức lòng du khách thập phương. Xung quanh khách sạn Diamond Sea có rất nhiều nhà hàng hải sản tươi ngon sẽ phục vụ du khách bốn mùa trong năm.\r\n\r\nNếu bạn là người thích ẩm thực Quốc tế thì nhà hàng Honolulu sẽ phục vụ bạn gói khuyến mãi thực đơn món Âu được tạo nên từ những đầu bếp tài hoa khách sạn.\r\n\r\n",
+      "type": "TEXT",
+      "number": 2
+    }
+  ],
+  "browser": true,
+  "_class": "ute.group3.blogtravel.model.Post"
+},{
+  "_id": {
+    "$oid": "60bc16babcf0382d95781c87"
+  },
+  "number": 17,
+  "category": "Nơi ở",
+  "username": "18110288",
+  "headerImg": "img/postPhoto/17/9112017211850455873-725694-1510217013_680x0.jpeg",
+  "Title": "Các khách sạn gần biển Mỹ Khê Đà Nẵng tại Vnbooking.com",
+  "description": "Các khách sạn gần biển Mỹ Khê được Vnbooking đánh giá và tổng hợp để các bạn có thể chọn lựa cho mình những khách sạn gần biển Mỹ Khê tốt nhất.\r\n\r\nBể bơi khách sạn Diamond Sea",
+  "Created": {
+    "$date": "2021-06-06T00:28:42.570Z"
+  },
+  "itemPostList": [
+    {
+      "text": " Ngoài những nét đẹp tinh tế với những những thiết kế đẳng cấp thì Diamond Sea còn thu hút du khách với những dịch vụ kèm theo vô cùng đa dạng.\r\n\r\nNhà hàng Honolulu:\r\n\r\nHòn đảo ẩm thực Honolulu với thực đơn phong phú và chất lượng tới từ đội ngũ đầu bếp chuyên nghiệp của Diamond Sea sẽ mang đến cho kỳ nghỉ của du khách những giá trị tinh thần tốt nhất. Điểm tâm sáng được chuẩn bị theo phong cách buffet với các món ăn mang hương vị Á – Âu sẽ làm một ngày mới của du khách thêm phần ý nghĩa.",
+      "type": "TEXT",
+      "number": 0
+    },
+    {
+      "text": "img/postPhoto/17/restaurant-diamond-sea-hotel-da-nang-2.jpg",
+      "type": "IMG",
+      "number": 1
+    },
+    {
+      "text": " Điều đặc biệt là trong thực đơn hàng ngày của quý khách bao gồm các món ăn đặc sản của mọi vùng miền trên thế giới hay các món ăn truyền thống của dải đất hình chữ S.\r\nHồ bơi tầng thượng của khách sạn sẽ mang đến cho quý khách cái nhìn toàn cảnh của thành phố đáng sống nhất Việt Nam từ trên cao với một bên là biển xanh vô tận, một bên là thành phố trẻ yên bình. Quầy bar Kauai sẽ phục vụ quý khách với các món đồ uống mang thương hiệu đặc trưng riêng của Diamond Sea từ bàn tay tài hoa của các bartender phục vụ từ 8 giờ sáng đến nửa đêm.",
+      "type": "TEXT",
+      "number": 2
+    },
+    {
+      "text": "img/postPhoto/17/Diamond_Sea_Hotel_Da_Nang.jpg",
+      "type": "IMG",
+      "number": 3
+    },
+    {
+      "text": " Nằm trên tầng 19 của Khách sạn Đà Nẵng Diamond Sea,  được lấy cảm hứng từ đặc điểm thiên nhiên xung quanh và hương liệu biển Hawaii. Spa Lomi Lomi là một khu chức năng với các phòng trị liệu sẽ giúp Quý khách giải tỏa những căng thẳng mệt mỏi bởi những trị liệu viên giàu kinh nghiệm của chúng tôi.\r\n\r\nHãy đến với Diamond Sea để tận hưởng những điều tuyệt vời nhất khám phá những trải nghiệm mang đầy màu sắc Hawaii. Mọi thông tin về bảng giá các gói khuyến mại của Diamond Sea Đà Nẵng hoặc các khách sạn tại Đà Nẵng khác sẽ được liên tục cập nhật tại Vnbooking.com .Hotline: 0914 945 411 – 024-3371 9666.",
+      "type": "TEXT",
+      "number": 4
+    }
+  ],
+  "browser": true,
+  "_class": "ute.group3.blogtravel.model.Post"
+},{
+  "_id": {
+    "$oid": "60bc1703bcf0382d95781c88"
+  },
+  "number": 18,
+  "category": "Con người",
+  "username": "18110288",
+  "headerImg": "img/postPhoto/18/khach-san-van-son-da-nang-2.jpg",
+  "Title": "Khách sạn Vân Sơn Đà Nẵng – sự lựa chọn tối ưu",
+  "description": "Khách sạn Vân Sơn Đà Nẵng có vị trí vô cùng đắc địa, chỉ cách biển Mỹ Khê xinh đẹp vỏn vẹn 50m, tại phòng khách sạn, cầu quay sông Hàn mỹ miều, cầu Thuận Phước lấp lánh dưới ánh đèn đêm huyền ảo nằm gọn trong mắt bạn. Đây thực sự là điểm lưu trú lý tưởng và là giải pháp cho mỗi chuyến đi tới Đà Nẵng – thiên đường của biển. Không những vậy, nếu đi vào dịp diễn ra sự kiện bắn pháo hoa quốc tế hằng năm, từ sân thượng của Vân Sơn, bạn sẽ chiếm trọn toàn cảnh rực rỡ những chùm pháo hoa đẹp mắt.",
+  "Created": {
+    "$date": "2021-06-06T00:29:55.871Z"
+  },
+  "itemPostList": [
+    {
+      "text": " địa chỉ: 111 – 113 Đường Hà Bổng, Phường Phước Mỹ, Quận Sơn Trà, Đà Nẵng, gần con đường lớn nhất Đà Nẵng , đường Phạm Văn Đồng.\r\n\r\nTiêu chuẩn: 3 sao, số phòng 41\r\n\r\nGiờ nhận – trả phòng: 14h – 12h\r\n\r\nĐặc điểm phòng: tất cả phòng tại khách sạn Vân Sơn Đà Nẵng đều có cửa sổ hướng biển.\r\n\r\ngiá phòng: 409,207 đ  xuống còn 388,747 đ\r\n\r\n",
+      "type": "TEXT",
+      "number": 0
+    },
+    {
+      "text": "img/postPhoto/18/khach-san-van-son-da-nang-3.jpg",
+      "type": "IMG",
+      "number": 1
+    },
+    {
+      "number": 2
+    },
+    {
+      "text": " Chính sách dành cho trẻ nhỏ:\r\n\r\nTrẻ em dưới 6 tuổi (ở chung với bố mẹ): Miễn phí/tối đa 02 trẻ em.\r\nTrẻ từ 7 tuổi đến 11 tuổi (ở chung với bố mẹ): Tính 50.000/đêm/người.\r\nTrẻ từ 12 tuổi trở lên: Tính 100.000/đêm/ người.",
+      "type": "TEXT",
+      "number": 3
+    }
+  ],
+  "browser": true,
+  "_class": "ute.group3.blogtravel.model.Post"
+},{
+  "_id": {
+    "$oid": "60bc1759bcf0382d95781c89"
+  },
+  "number": 19,
+  "category": "Nơi ở",
+  "username": "18110288",
+  "headerImg": "img/postPhoto/19/khach-san-a-la-carte-da-nang1.jpg",
+  "Title": "Khách sạn A La Carte Đà Nẵng – điểm nhấn biển Mỹ Khê",
+  "description": "Ngay cạnh biển Mỹ Khê xinh đẹp, được mệnh danh là thiên đường đệ nhất biển Việt Nam, A La Carte là hiện thân của phong cách “Cá nhân, Linh hoạt và Đáng giá tiền”.\r\n\r\nA La Carte Đà Nẵng có cái nhìn rất riêng, là điểm nhấn trên biển. Bạn không cần trả phí cho những thứ mình không thực sự cần thiết. Giá rất ổn cho một khách sạn đẳng cấp 4 sao. Đây còn tạo ấn tượng mạnh mẽ cho du khách bởi hồ bơi trên tầng thượng tưởng như vô tận.",
+  "Created": {
+    "$date": "2021-06-06T00:31:21.030Z"
+  },
+  "itemPostList": [
+    {
+      "text": "img/postPhoto/19/khach_san_a_la_carte_da_nang-2.jpg",
+      "type": "IMG",
+      "number": 0
+    },
+    {
+      "text": " Các hoạt động hấp dẫn:\r\n\r\nBạn nghĩ sao khi được tham gia các hoạt động lặn biển thăm thú san hô, đi xe đạp dạo bờ biển với người thương, hay ngồi lặng và câu cá. Cho dù có con nhỏ đi kèm, đừng lo, tại đây có sân chơi dành cho trẻ, câu lạc bộ dành cho trẻ khiến lũ nhỏ thích mê và không theo bám bố mẹ.\r\n\r\n21 tầng thứ tự: tầng 1 là khu lễ tân, sảnh chờ, bar, tầng 2 ẩm thực, hội nghị, tầng 3 và 4 dịch vụ khách sạn, từ tầng 5 là căn hộ. Tầng áp mái gồm bể bơi “khủng”, Spa, café kết hợp không gian vườn.",
+      "type": "TEXT",
+      "number": 1
+    },
+    {
+      "text": "img/postPhoto/19/khach-san-alacarte-1.jpg",
+      "type": "IMG",
+      "number": 2
+    },
+    {
+      "text": " Bạn nghĩ sao khi trên bể bơi tầng thượng bao quát hết biển Mỹ Khê, hay ngồi nhâm nhi café theo kiểu “độ cao máy bay”. Rất thú vị. Đây là lời khen ngợi của mọi khách du lịch đến với khách sạn A La Carte Đà Nẵng.\r\n\r\nĐể đặt phòng khách sạn Đà Nẵng cũng như khách sạn trên toàn quốc uy tín, nhanh chóng, an toàn, giá ưu đãi, vui lòng liên hệ trực tiếp với vnbooking theo hotline: 0914 945 411 (24/7) – 0914 945 415 hoặc vào chat online tại site Vnbooking.com.",
+      "type": "TEXT",
+      "number": 3
+    }
+  ],
+  "browser": true,
+  "_class": "ute.group3.blogtravel.model.Post"
+},{
+  "_id": {
+    "$oid": "60bc4b2bb349ae0d5a7835b8"
+  },
+  "number": 20,
+  "category": "Ăn uống",
+  "username": "ute",
+  "headerImg": "img/postPhoto/20/deokhaupha.jpg",
+  "Title": "PHAI PHỐ HỘI AN - QUÁN CÀ PHÊ TÌM VỀ NHỮNG NGÀY XƯA CŨ.",
+  "description": "day la mo ta ",
+  "Created": {
+    "$date": "2021-06-06T04:12:27.310Z"
+  },
+  "itemPostList": [
+    {
+      "text": " noi dung 01",
+      "type": "TEXT",
+      "number": 0
+    },
+    {
+      "text": "img/postPhoto/20/khach-san-a-la-carte-da-nang1.jpg",
+      "type": "IMG",
+      "number": 1
+    },
+    {
+      "text": " day la noi dung 02",
+      "type": "TEXT",
+      "number": 2
+    },
+    {
+      "text": "img/postPhoto/20/khach-san-van-son-da-nang-3.jpg",
+      "type": "IMG",
+      "number": 3
+    }
+  ],
+  "browser": true,
+  "_class": "ute.group3.blogtravel.model.Post"
+}]
